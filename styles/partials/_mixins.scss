@@ -1,0 +1,103 @@
+@use "./variables" as *;
+@use "./typography"as *;
+
+@mixin tablet{
+    @media (min-width:$tablet-breakpoint){
+        @content;
+    }
+} 
+
+@mixin desktop{
+    @media (min-width:$desktop-breakpoint){
+        @content;
+    }
+} 
+
+@mixin flex($justify: flex-start, $align: stretch, $direction: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+  }
+
+@mixin dt-pagehead{
+    font-size:60px;
+    line-height:68px; 
+    font-weight:700; 
+    font-family:"NunitoSans";
+}
+
+@mixin dt-sectionhead{
+    font-size:36px;
+    line-height:44px; 
+    font-weight:700;
+    font-family:"NunitoSans";
+}
+
+@mixin dt-subheader{
+    font-size:24px;
+    line-height:32px;
+    font-weight:500;
+    font-family:"NunitoSans";
+}
+
+@mixin dt-bodycopy{
+    font-size:14px;
+    line-height:22px;
+    font-weight:400;
+    font-family:"NunitoSans";
+}
+
+@mixin dt-bodycopy-b{
+    @extend dt-bodycopy; 
+    font-weight:700;
+    font-family:"NunitoSans";
+}
+
+@mixin dt-footercopy{
+    font-size:14px;
+    line-height:20px; 
+    font-weight:400;
+    font-family:"NunitoSans";
+}
+
+@mixin dt-footcopy-b{
+    @extend dt-footercopy;
+    font-weight:700;
+    font-family:"NunitoSans";
+}
+
+@mixin dt-labelbutton{
+    font-size:12px;
+    line-height:20px;
+    font-weight:700;
+    font-family:"NunitoSans";
+}
+
+@mixin m-page-section-head{
+    font-size:24px;
+    line-height:32px;
+    font-weight:700;
+    font-family:"NunitoSans";
+}
+
+@mixin m-subheader{
+    font-size:14px;
+    line-height:22px;
+    font-weight:500; 
+    font-family:"NunitoSans";
+}
+
+@mixin m-body-footer-copy{
+    font-size:13px;
+    line-height:18px; 
+    font-weight:400;
+    font-family:"NunitoSans";
+}
+
+@mixin m-labelbutton{
+    font-size:10px;
+    line-height:20px;
+    font-weight:700;
+    font-family:"NunitoSans";
+}

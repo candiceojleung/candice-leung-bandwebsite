@@ -1,0 +1,35 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./typography" as *;
+
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+a{
+    text-decoration:none; 
+    color:$primary-white;
+}
+
+p{
+    padding:16px;
+    @include m-body-footer-copy;
+}
+
+h2{
+    @include m-page-section-head;
+    padding:24px 16px 16px;
+}
+
+h3{
+    @include m-subheader;
+    padding:16px 16px 0 16px;
+}
+
+.image{
+    width:100vw;
+    padding:0 16px 16px 16px;
+}
