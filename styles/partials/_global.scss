@@ -12,24 +12,52 @@
 a{
     text-decoration:none; 
     color:$primary-white;
+    padding:16px;
 }
 
 p{
+    @include body-copy;
     padding:16px;
-    @include m-body-footer-copy;
+}
+
+h1{
+    @include page-head;
 }
 
 h2{
-    @include m-page-section-head;
-    padding:24px 16px 16px;
+    @include section-head;
 }
 
 h3{
-    @include m-subheader;
-    padding:16px 16px 0 16px;
+    @include subheader;
+}
+
+footer{
+    @include footer-copy;
+
+}
+
+.navbar{
+
+    &__list{
+        list-style:none;
+        @include body-copy;
+        @include flex (space-between,stretch);
+    }
+
+    &__link{
+        color:$secondary-grey;
+        padding: 16px;
+
+        &:hover , &:active{
+            color:$primary-white;
+            font-weight:700;
+            border-bottom: 2px solid white;
+        }
+    }
 }
 
 .image{
     width:100vw;
-    padding:0 16px 16px 16px;
+    padding:0 16px 16px;;
 }

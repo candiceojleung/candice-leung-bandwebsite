@@ -6,74 +6,60 @@
 .header{
     background-color:$primary-black;
     width:100vw;
-    
+
     &__link{
         @include flex (center,center);
-        padding:16px;
+        padding:1rem;
     }
 
     &__logo{
-        max-height:20px;
-        max-width:120px;
+        max-height:1.25rem;
+        max-width:7.5rem;
     }
 }
-.navbar{
-    @include flex (space-around,stretch);
-    @include m-subheader;
-    padding-bottom:16px;
-
-    
-    &__bio , &__show{
-        color:$secondary-grey;
-        position:relative;
-
-        &:hover , &:active{
-            color:$primary-white;
-            font-weight:700;
-       
-            &:after{
-                content:"";
-                position:absolute;
-                top:35px;
-                left:-50px;
-                height:10%;
-                width:1fr;
-                max-width:100%;
-                background-color:$primary-white;
-            }
-        }
-    }
-}
-
 
 .hero{
-    background-image: url("../assets/images/hero-bio.jpg");
+    background-image:linear-gradient(to top, rgba(50,50,50,0.5), rgba(50,50,50,0.5)), url("../assets/images/hero-bio.jpg");
     background-position:center;
     background-size:cover;
-    background-repeat:no-repeat;
-    height:25vh;
+    background-repeat:no-repeat; 
+    height:65vw;
     width:100vw;
 
     &__title{
-        @include m-page-section-head;
         @include flex (flex-start, center);
-        height:25vh;
-        padding: 24px 16px 16px;
+        height:65vw;;
         color:$primary-white;
-        background-color:$primary-black;
-        opacity:50%;
     }
 }
 
 .intro{
 
     &__quote, &__credit{
-        @include m-body-footer-copy;
         font-weight: 700;
-        padding:0 16px; 
-        // ask someone about this
+        margin:5px;
     }
 
+}
+
+.bio__descriptions{
+    @include tablet{
+        @include flex (space-evenly,center);
+        margin:0 48px;
+    }
+}
+
+.photo__title{
+    @include tablet{
+    }
+
+}
+.photo__images {
+
+    @include tablet{
+        @include flex(center,center);
+        flex-wrap:wrap;
+    }
 }
 .photo__images .image{
     filter: grayscale(100%);
@@ -81,54 +67,39 @@
     &:hover{
     filter: grayscale(0%);
     }
+
+    @include tablet{
+        width:30%;
+    }
 }
 
 .footer{
     background-color:$primary-black;
     color:$primary-white;
-    @include m-body-footer-copy;
+    @include footer-copy;
 
     &__mgmts{
-        padding-bottom:16px;
+
+        @include tablet{
+            @include flex (flex-start,stretch);
+            padding:0 36px 36px;
+        }
     }
 
-    &__logo{
-        padding:24px 16px 0;
-    }
-
-    &__copyright{
-        font-size:10px;
+.contact{
+    @include tablet{
+        @include flex (flex-start,baseline);
     }
 }
 
 .social{
     width:50%;
-    padding-left:16px;
     @include flex (space-between,stretch);
-}
 
-.mgmt{
-
-    &__name{
-        font-weight:700;
-    }
-    &__address{
-        padding:0 16px;
-    }
-
-    &__city{
-        padding-top:0px;
-    }
-
-    &__agent{
-        padding: 0 16px;
-    }
-
-    &__country{
-        padding-top:0px;
-    }
-    
-    &__email{
-        padding:16px;
+    @include tablet{
+        padding-left:0;
+        width:15%;
+        @include flex (space-between, center);
+        }
     }
 }
