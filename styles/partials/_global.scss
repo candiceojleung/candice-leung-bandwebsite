@@ -17,7 +17,6 @@ a{
 
 p{
     @include body-copy;
-    padding:16px;
 }
 
 h1{
@@ -32,32 +31,32 @@ h3{
     @include subheader;
 }
 
-footer{
-    @include footer-copy;
-
-}
-
 .navbar{
 
     &__list{
         list-style:none;
         @include body-copy;
-        @include flex (space-between,stretch);
+        @include flex (space-around,stretch);
     }
 
     &__link{
         color:$secondary-grey;
-        padding: 16px;
 
         &:hover , &:active{
             color:$primary-white;
+            padding:14px;
             font-weight:700;
-            border-bottom: 2px solid white;
+            border-bottom: 2px solid $primary-white;
         }
     }
 }
 
 .image{
     width:100vw;
-    padding:0 16px 16px;;
+    padding:0 16px 16px;
+}
+
+.footer{
+    @include footer-copy;
+
 }

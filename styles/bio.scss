@@ -8,8 +8,8 @@
     width:100vw;
 
     &__link{
-        @include flex (center,center);
-        padding:1rem;
+        @include flex (center, center);
+        padding-bottom:0;
     }
 
     &__logo{
@@ -35,48 +35,68 @@
 
 .intro{
 
+    &__quote{
+        @include subheader;
+    }
+//fix spacing
     &__quote, &__credit{
         font-weight: 700;
-        margin:5px;
+
     }
+
 
 }
 
-.bio__descriptions{
-    @include tablet{
-        @include flex (space-evenly,center);
-        margin:0 48px;
+.bio{
+
+    &__title{
+        padding: 0 16px;
+        margin: 0 9px;
+    }
+
+    &__descriptions{
+        margin:0 9px; 
+        padding:0 16px; 
+        @include tablet{
+            @include flex (space-evenly,center);
+            margin:0 48px;
+        }
+    }
+
+    &__description{
+        padding:16px 0;
     }
 }
 
-.photo__title{
-    @include tablet{
-    }
 
-}
-.photo__images {
+.photo{
+    background-color: $secondary-white;
 
-    @include tablet{
-        @include flex(center,center);
-        flex-wrap:wrap;
-    }
-}
-.photo__images .image{
-    filter: grayscale(100%);
+    &__images {
 
-    &:hover{
-    filter: grayscale(0%);
-    }
+        @include tablet{
+            @include flex(center,center);
+            flex-wrap:wrap;
+        }
 
-    @include tablet{
-        width:30%;
+        .image{
+            filter: grayscale(100%);
+        
+            &:hover{
+            filter: grayscale(0%);
+            }
+        
+            @include tablet{
+                width:30%;
+            }
+        }
     }
 }
 
 .footer{
     background-color:$primary-black;
     color:$primary-white;
-    @include footer-copy;
+    padding:0;
 
     &__mgmts{
 
@@ -86,7 +106,37 @@
         }
     }
 
-.contact{
+    &__logo{
+        margin-top:10px;
+        padding:16px 16px 0 16px;
+    }
+
+    &__copyright{
+        font-size:11px;
+    }
+}
+
+.mgmt{
+    padding-bottom: 16px; 
+
+    &__name{
+        font-weight:700;
+    }
+
+    &__address, &__agent{
+        padding: 0 16px;
+    }
+
+    &__city, &__country{
+        padding-top:0;
+    }
+
+}
+
+.footer{
+    &__title{
+        padding-bottom:0;
+    }
     @include tablet{
         @include flex (flex-start,baseline);
     }
@@ -102,4 +152,3 @@
         @include flex (space-between, center);
         }
     }
-}
