@@ -19,24 +19,14 @@ p{
     @include body-copy;
 }
 
-h1{
-    @include page-head;
-}
 
-h2{
-    @include section-head;
-}
-
-h3{
-    @include subheader;
-}
 
 .navbar{
 
     &__list{
         list-style:none;
         @include body-copy;
-        @include flex (space-around,stretch);
+        @include flex (space-around, stretch)
     }
 
     &__link{
@@ -49,11 +39,6 @@ h3{
             border-bottom: 2px solid $primary-white;
         }
     }
-}
-
-.image{
-    width:100vw;
-    padding:0 16px 16px;
 }
 
 .footer{

@@ -10,6 +10,7 @@
     &__link{
         @include flex (center, center);
         padding-bottom:0;
+
     }
 
     &__logo{
@@ -28,6 +29,7 @@
 
     &__title{
         @include flex (flex-start, center);
+        @include page-head;
         height:65vw;;
         color:$primary-white;
     }
@@ -35,36 +37,66 @@
 
 .intro{
 
+    &__title{
+        @include section-head;
+    }
+
+    &__image{
+        width:100vw;
+        padding:0 16px 16px;
+        @include tablet{
+            padding: 0 36px;
+        }
+    }
+    
     &__quote{
-        @include subheader;
-    }
-//fix spacing
-    &__quote, &__credit{
+        @include subheader;  
         font-weight: 700;
+        padding: 0px 16px;
+            @include tablet{
+                margin-left:56px;
+                margin-right:34px;
+                padding-bottom:0px;
+                padding-right:0px;
+            }
+    }
+    &__credit{
+        @include body-copy;
+        font-weight:700;
+            @include tablet{
+                margin-left: 56px;
+                padding-left:36px;
+            }
 
     }
-
-
 }
 
 .bio{
-
     &__title{
+        @include subheader;
         padding: 0 16px;
-        margin: 0 9px;
+        @include tablet{
+            margin-left: 56px;
+
+        }
     }
 
     &__descriptions{
-        margin:0 9px; 
-        padding:0 16px; 
         @include tablet{
             @include flex (space-evenly,center);
-            margin:0 48px;
+            gap:20px;
+            padding:0 36px 36px;
+            margin-left: 56px;
+            margin-right:56px;
         }
     }
 
     &__description{
-        padding:16px 0;
+        @include body-copy;
+
+        @include tablet{
+            padding:0;
+        }
     }
 }
 
@@ -72,79 +104,124 @@
 .photo{
     background-color: $secondary-white;
 
+    &__title{
+        @include section-head;
+    }
+
     &__images {
 
         @include tablet{
-            @include flex(center,center);
+            @include flex(space-evenly,center);
             flex-wrap:wrap;
+            gap:8px;
+            padding:0 24px 36px;
         }
+    }
 
-        .image{
-            filter: grayscale(100%);
-        
+    &__image{
+        filter: grayscale(100%);
+        width:100vw;
+        padding:0 16px 16px;
+
             &:hover{
             filter: grayscale(0%);
             }
         
             @include tablet{
                 width:30%;
+                padding:0 0 8px;
             }
         }
-    }
 }
 
 .footer{
     background-color:$primary-black;
     color:$primary-white;
     padding:0;
+    @include footer-copy;
+    @include tablet{
+        padding:0;
+        position:relative;
+    }
+
+
+    &__title{
+        @include section-head;
+    }
+
+    &__contact{
+        @include tablet{
+            @include flex (flex-start,baseline);
+        }
+    }
 
     &__mgmts{
 
         @include tablet{
             @include flex (flex-start,stretch);
-            padding:0 36px 36px;
         }
     }
 
     &__logo{
         margin-top:10px;
         padding:16px 16px 0 16px;
+        @include tablet{
+            position:absolute;
+            bottom:305px;
+            left:600px;
+        }
     }
 
     &__copyright{
         font-size:11px;
+        @include tablet{
+            @include footer-copy;
+            padding:36px;
+        }
     }
 }
 
 .mgmt{
     padding-bottom: 16px; 
+    @include tablet{
+        padding-left:36px;
+        padding-bottom:36px;
+    }
+
 
     &__name{
         font-weight:700;
+        @include tablet{
+            padding-left:0;
+        }
     }
 
     &__address, &__agent{
         padding: 0 16px;
+        @include tablet{
+            padding-left:0;
+        }
     }
 
     &__city, &__country{
         padding-top:0;
+        @include tablet{
+            padding-left:0;
+        }
+    }
+
+    &__email{
+        @include tablet{
+            padding-left:0;
+        }
     }
 
 }
 
-.footer{
-    &__title{
-        padding-bottom:0;
-    }
-    @include tablet{
-        @include flex (flex-start,baseline);
-    }
-}
 
 .social{
     width:50%;
-    @include flex (space-between,stretch);
+    @include flex (space-between,center);
 
     @include tablet{
         padding-left:0;
