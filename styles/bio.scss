@@ -5,13 +5,17 @@
 
 .header{
     background-color:$primary-black;
-    width:100vw;
+    width:100%;
 
     @include tablet{
         display:flex;
         gap:36px;
         padding:24px 0 24px 36px;
 
+    }
+
+    @include desktop{
+        padding-left:80px;
     }
 
     &__link{
@@ -58,18 +62,24 @@
     background-size:cover;
     background-repeat:no-repeat; 
     height:65vw;
-    width:100vw;
+    width:100%;
 
     &__title{
         @include flex (flex-start, center);
         @include page-head;
         height:65vw;;
         color:$primary-white;
+
+        @include desktop{
+            padding-left:80px;
+        }
     }
 }
 
 .intro{
-
+    @include desktop{
+        padding-left:80px;
+    }
     &__title{
         @include section-head;
     }
@@ -94,22 +104,27 @@
             padding-left:36px;
             width:90%;
         }
+
+        @include desktop{
+            width:70%;
+        }
     }
     &__quote{
+        padding-right:16px;
         @include subheader;  
         font-weight: 700;
-        padding: 0 0 0 16px;
+        padding: 0 16px;
+
             @include tablet{
                 padding: 36px 0 0 0;
             }
     }
+
     &__credit{
         @include body-copy;
         font-weight:700;
             @include tablet{
                 padding-left:0px;
-                // margin-left: 56px;
-                // padding-left:36px;
             }
     }
 }
@@ -123,6 +138,11 @@
             padding-bottom:24px;
 
         }
+
+        @include desktop{
+            padding-left:80px;
+            margin: 0 80px;
+        }
     }
 
     &__descriptions{
@@ -133,7 +153,11 @@
             margin-left: 56px;
             margin-right:56px;
         }
-    }
+        @include desktop{
+            padding:0 80px;
+            margin:0 80px;
+            }
+        }
 
     &__description{
         @include body-copy;
@@ -150,6 +174,10 @@
 
     &__title{
         @include section-head;
+        @include desktop{
+            padding-left:80px;
+            margin:0 36px;
+        }
     }
 
     &__images {
@@ -160,11 +188,15 @@
             gap:8px;
             padding:0 24px 36px;
         }
+
+        @include desktop{
+            margin: 0 64px 0px;
+        }
     }
 
     &__image{
         filter: grayscale(100%);
-        width:100vw;
+        width:100%;
         padding:0 16px 16px;
 
             &:hover{
@@ -181,11 +213,15 @@
 .footer{
     background-color:$primary-black;
     color:$primary-white;
-    padding:0;
-    @include footer-copy;
+
+
     @include tablet{
         padding:0;
         position:relative;
+    }
+
+    @include desktop{
+        padding-left:80px;
     }
 
     &__title{
@@ -196,10 +232,10 @@
         @include tablet{
             @include flex (flex-start,baseline);
         }
+
     }
 
     &__mgmts{
-
         @include tablet{
             @include flex (flex-start,stretch);
             gap:16px;
@@ -211,12 +247,19 @@
         padding:16px 16px 0 16px;
         @include tablet{
             position:absolute;
-            bottom:320px;
+            bottom:340px;
             left:600px;
+        }
+
+        @include desktop{
+            position:absolute;
+            bottom:340px;
+            left:1040px;
         }
     }
 
     &__copyright{
+        @include footer-copy;
         font-size:11px;
         @include tablet{
             @include footer-copy;
@@ -226,7 +269,8 @@
 }
 
 .mgmt{
-    padding-bottom: 16px; 
+    @include footer-copy;
+    padding:0;
 
     @include tablet{
         padding-left:36px;
@@ -235,6 +279,7 @@
 
 
     &__name{
+        @include footer-copy;
         font-weight:700;
         @include tablet{
             padding-left:0;
@@ -251,6 +296,8 @@
 
     &__city, &__country{
         padding-top:0;
+        padding-left:16px;
+        padding-bottom:16px;
         @include tablet{
             padding-left:0;
             padding-bottom:36px;

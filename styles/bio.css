@@ -25,31 +25,20 @@ a {
   padding: 16px;
 }
 
-.footer {
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
-  font-family: "NunitoSans";
-  padding: 16px;
-}
-@media (min-width: 48rem) {
-  .footer {
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 400;
-    font-family: "NunitoSans";
-  }
-}
-
 .header {
   background-color: #323232;
-  width: 100vw;
+  width: 100%;
 }
 @media (min-width: 48rem) {
   .header {
     display: flex;
     gap: 36px;
     padding: 24px 0 24px 36px;
+  }
+}
+@media (min-width: 80rem) {
+  .header {
+    padding-left: 80px;
   }
 }
 .header__link {
@@ -120,7 +109,7 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   height: 65vw;
-  width: 100vw;
+  width: 100%;
 }
 .hero__title {
   display: flex;
@@ -144,7 +133,17 @@ a {
     padding: 48px 36px 36px;
   }
 }
+@media (min-width: 80rem) {
+  .hero__title {
+    padding-left: 80px;
+  }
+}
 
+@media (min-width: 80rem) {
+  .intro {
+    padding-left: 80px;
+  }
+}
 .intro__title {
   font-size: 24px;
   line-height: 32px;
@@ -182,14 +181,20 @@ a {
     width: 90%;
   }
 }
+@media (min-width: 80rem) {
+  .intro__paragraph {
+    width: 70%;
+  }
+}
 .intro__quote {
+  padding-right: 16px;
   font-size: 14px;
   line-height: 22px;
   font-weight: 500;
   font-family: "NunitoSans";
   padding: 16px;
   font-weight: 700;
-  padding: 0 0 0 16px;
+  padding: 0 16px;
 }
 @media (min-width: 48rem) {
   .intro__quote {
@@ -247,6 +252,12 @@ a {
     padding-bottom: 24px;
   }
 }
+@media (min-width: 80rem) {
+  .bio__title {
+    padding-left: 80px;
+    margin: 0 80px;
+  }
+}
 @media (min-width: 48rem) {
   .bio__descriptions {
     display: flex;
@@ -257,6 +268,12 @@ a {
     padding: 0 36px 36px;
     margin-left: 56px;
     margin-right: 56px;
+  }
+}
+@media (min-width: 80rem) {
+  .bio__descriptions {
+    padding: 0 80px;
+    margin: 0 80px;
   }
 }
 .bio__description {
@@ -298,6 +315,12 @@ a {
     padding: 48px 36px 36px;
   }
 }
+@media (min-width: 80rem) {
+  .photo__title {
+    padding-left: 80px;
+    margin: 0 36px;
+  }
+}
 @media (min-width: 48rem) {
   .photo__images {
     display: flex;
@@ -309,9 +332,14 @@ a {
     padding: 0 24px 36px;
   }
 }
+@media (min-width: 80rem) {
+  .photo__images {
+    margin: 0 64px 0px;
+  }
+}
 .photo__image {
   filter: grayscale(100%);
-  width: 100vw;
+  width: 100%;
   padding: 0 16px 16px;
 }
 .photo__image:hover {
@@ -327,25 +355,16 @@ a {
 .footer {
   background-color: #323232;
   color: #FFFFFF;
-  padding: 0;
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
-  font-family: "NunitoSans";
-  padding: 16px;
-}
-@media (min-width: 48rem) {
-  .footer {
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 400;
-    font-family: "NunitoSans";
-  }
 }
 @media (min-width: 48rem) {
   .footer {
     padding: 0;
     position: relative;
+  }
+}
+@media (min-width: 80rem) {
+  .footer {
+    padding-left: 80px;
   }
 }
 .footer__title {
@@ -388,12 +407,32 @@ a {
 @media (min-width: 48rem) {
   .footer__logo {
     position: absolute;
-    bottom: 320px;
+    bottom: 340px;
     left: 600px;
   }
 }
+@media (min-width: 80rem) {
+  .footer__logo {
+    position: absolute;
+    bottom: 340px;
+    left: 1040px;
+  }
+}
 .footer__copyright {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  font-family: "NunitoSans";
+  padding: 16px;
   font-size: 11px;
+}
+@media (min-width: 48rem) {
+  .footer__copyright {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: "NunitoSans";
+  }
 }
 @media (min-width: 48rem) {
   .footer__copyright {
@@ -415,7 +454,20 @@ a {
 }
 
 .mgmt {
-  padding-bottom: 16px;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  font-family: "NunitoSans";
+  padding: 16px;
+  padding: 0;
+}
+@media (min-width: 48rem) {
+  .mgmt {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: "NunitoSans";
+  }
 }
 @media (min-width: 48rem) {
   .mgmt {
@@ -424,7 +476,20 @@ a {
   }
 }
 .mgmt__name {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  font-family: "NunitoSans";
+  padding: 16px;
   font-weight: 700;
+}
+@media (min-width: 48rem) {
+  .mgmt__name {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: "NunitoSans";
+  }
 }
 @media (min-width: 48rem) {
   .mgmt__name {
@@ -442,6 +507,8 @@ a {
 }
 .mgmt__city, .mgmt__country {
   padding-top: 0;
+  padding-left: 16px;
+  padding-bottom: 16px;
 }
 @media (min-width: 48rem) {
   .mgmt__city, .mgmt__country {
