@@ -13,6 +13,15 @@
     }
 } 
 
+@mixin hover{
+    &:hover , &:active{
+        color:$primary-white;
+
+        font-weight:700;
+        border-bottom: 2px solid $primary-white;
+    }
+}
+
 @mixin flex($justify: flex-start, $align: stretch, $direction: row) {
     display: flex;
     justify-content: $justify;

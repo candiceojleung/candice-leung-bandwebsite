@@ -7,10 +7,19 @@
     background-color:$primary-black;
     width:100vw;
 
+    @include tablet{
+        display:flex;
+        gap:36px;
+        padding:24px 0 24px 36px;
+
+    }
+
     &__link{
         @include flex (center, center);
         padding-bottom:0;
-
+            @include tablet{
+                padding:0;
+            }
     }
 
     &__logo{
@@ -19,6 +28,30 @@
     }
 }
 
+.navbar{
+
+    &__list{
+        list-style:none;
+        @include body-copy;
+        @include flex (space-around, stretch);
+        
+        @include tablet{
+            padding:0;
+        }
+    }
+
+    &__link{
+        color:$secondary-grey;
+        @include hover;
+        padding:14px;
+                
+        @include tablet{
+            color:$secondary-grey;
+            padding:0 16px 24px;
+            @include hover;
+            }
+        }
+}
 .hero{
     background-image:linear-gradient(to top, rgba(50,50,50,0.5), rgba(50,50,50,0.5)), url("../assets/images/hero-bio.jpg");
     background-position:center;
@@ -45,29 +78,39 @@
         width:100vw;
         padding:0 16px 16px;
         @include tablet{
+            display:flex;
+            justify-content:center;
+            align-items:center;
             padding: 0 36px;
+            margin:0 56px;
+            width:85%;
+            // ask for help here
         }
     }
     
+    &__paragraph{
+        @include tablet{   
+            margin-left:56px;
+            padding-left:36px;
+            width:90%;
+        }
+    }
     &__quote{
         @include subheader;  
         font-weight: 700;
-        padding: 0px 16px;
+        padding: 0 0 0 16px;
             @include tablet{
-                margin-left:56px;
-                margin-right:34px;
-                padding-bottom:0px;
-                padding-right:0px;
+                padding: 36px 0 0 0;
             }
     }
     &__credit{
         @include body-copy;
         font-weight:700;
             @include tablet{
-                margin-left: 56px;
-                padding-left:36px;
+                padding-left:0px;
+                // margin-left: 56px;
+                // padding-left:36px;
             }
-
     }
 }
 
@@ -77,6 +120,7 @@
         padding: 0 16px;
         @include tablet{
             margin-left: 56px;
+            padding-bottom:24px;
 
         }
     }
@@ -144,7 +188,6 @@
         position:relative;
     }
 
-
     &__title{
         @include section-head;
     }
@@ -159,6 +202,7 @@
 
         @include tablet{
             @include flex (flex-start,stretch);
+            gap:16px;
         }
     }
 
@@ -167,7 +211,7 @@
         padding:16px 16px 0 16px;
         @include tablet{
             position:absolute;
-            bottom:305px;
+            bottom:320px;
             left:600px;
         }
     }
@@ -183,6 +227,7 @@
 
 .mgmt{
     padding-bottom: 16px; 
+
     @include tablet{
         padding-left:36px;
         padding-bottom:36px;
@@ -193,6 +238,7 @@
         font-weight:700;
         @include tablet{
             padding-left:0;
+            padding-bottom:36px;
         }
     }
 
@@ -207,12 +253,13 @@
         padding-top:0;
         @include tablet{
             padding-left:0;
+            padding-bottom:36px;
         }
     }
 
     &__email{
         @include tablet{
-            padding-left:0;
+            padding:0;
         }
     }
 

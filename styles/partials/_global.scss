@@ -15,32 +15,6 @@ a{
     padding:16px;
 }
 
-p{
-    @include body-copy;
-}
-
-
-
-.navbar{
-
-    &__list{
-        list-style:none;
-        @include body-copy;
-        @include flex (space-around, stretch)
-    }
-
-    &__link{
-        color:$secondary-grey;
-
-        &:hover , &:active{
-            color:$primary-white;
-            padding:14px;
-            font-weight:700;
-            border-bottom: 2px solid $primary-white;
-        }
-    }
-}
-
 .footer{
     @include footer-copy;
 
