@@ -3,323 +3,272 @@
 @use "./partials/typography" as *;
 @use "./partials/global" as *;
 
-.header{
-    background-color:$primary-black;
-    width:100%;
+.header {
+  background-color: $primary-black;
+  width: 100%;
 
-    @include tablet{
-        display:flex;
-        gap:36px;
-        padding:24px 0 24px 36px;
+  @include tablet {
+    display: flex;
+    gap: 36px;
+    padding: 24px 0 24px 36px;
+  }
 
+  @include desktop {
+    padding-left: 80px;
+  }
+
+  &__link {
+    @include flex(center, center);
+    padding: 16px;
+    @include tablet {
+      padding: 0;
     }
+  }
 
-    @include desktop{
-        padding-left:80px;
-    }
-
-    &__link{
-        @include flex (center, center);
-        padding-bottom:0;
-            @include tablet{
-                padding:0;
-            }
-    }
-
-    &__logo{
-        max-height:1.25rem;
-        max-width:7.5rem;
-    }
+  &__logo {
+    max-height: 1.25rem;
+    max-width: 7.5rem;
+  }
 }
 
-.navbar{
+.navbar {
+  &__list {
+    list-style: none;
+    @include body-copy;
+    @include flex(space-around, stretch);
+    padding-bottom: 16px;
+  }
 
-    &__list{
-        list-style:none;
-        @include body-copy;
-        @include flex (space-around, stretch);
-        
-        @include tablet{
-            padding:0;
-        }
+  &__link {
+    color: $secondary-grey;
+    padding: 14px;
+    @include hover;
+
+    @include tablet {
+      color: $secondary-grey;
+      padding: 0 16px 24px;
+      @include hover;
     }
-
-    &__link{
-        color:$secondary-grey;
-        @include hover;
-        padding:14px;
-                
-        @include tablet{
-            color:$secondary-grey;
-            padding:0 16px 24px;
-            @include hover;
-            }
-        }
-}
-.hero{
-    background-image:linear-gradient(to top, rgba(50,50,50,0.5), rgba(50,50,50,0.5)), url("../assets/images/hero-bio.jpg");
-    background-position:center;
-    background-size:cover;
-    background-repeat:no-repeat; 
-    height:65vw;
-    width:100%;
-
-    &__title{
-        @include flex (flex-start, center);
-        @include page-head;
-        height:65vw;;
-        color:$primary-white;
-
-        @include desktop{
-            padding-left:80px;
-        }
-    }
+  }
 }
 
-.intro{
-    @include desktop{
-        padding-left:80px;
-    }
-    &__title{
-        @include section-head;
-    }
+.hero {
+  background-image: linear-gradient(
+      to top,
+      rgba(50, 50, 50, 0.5),
+      rgba(50, 50, 50, 0.5)
+    ),
+    url("../assets/images/hero-bio.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 65vw;
+  width: 100%;
 
-    &__image{
-        width:100vw;
-        padding:0 16px 16px;
-        @include tablet{
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            padding: 0 36px;
-            margin:0 56px;
-            width:85%;
-            // ask for help here
-        }
-    }
-    
-    &__paragraph{
-        @include tablet{   
-            margin-left:56px;
-            padding-left:36px;
-            width:90%;
-        }
+  &__title {
+    @include flex(flex-start, center);
+    @include page-head;
+    height: 65vw;
+    color: $primary-white;
 
-        @include desktop{
-            width:70%;
-        }
+    @include desktop {
+      padding-left: 80px;
     }
-    &__quote{
-        padding-right:16px;
-        @include subheader;  
-        font-weight: 700;
-        padding: 0 16px;
-
-            @include tablet{
-                padding: 36px 0 0 0;
-            }
-    }
-
-    &__credit{
-        @include body-copy;
-        font-weight:700;
-            @include tablet{
-                padding-left:0px;
-            }
-    }
+  }
 }
 
-.bio{
-    &__title{
-        @include subheader;
-        padding: 0 16px;
-        @include tablet{
-            margin-left: 56px;
-            padding-bottom:24px;
+.intro {
+  @include desktop {
+    padding-left: 80px;
+  }
+  &__title {
+    @include section-head;
+    padding: 24px 16px 16px;
+  }
 
-        }
+  &__paragraph {
+    padding: 0 16px;
 
-        @include desktop{
-            padding-left:80px;
-            margin: 0 80px;
-        }
+    @include desktop {
+      width: 70%;
     }
+  }
 
-    &__descriptions{
-        @include tablet{
-            @include flex (space-evenly,center);
-            gap:20px;
-            padding:0 36px 36px;
-            margin-left: 56px;
-            margin-right:56px;
-        }
-        @include desktop{
-            padding:0 80px;
-            margin:0 80px;
-            }
-        }
+  &__image {
+    width: 100%;
+  }
 
-    &__description{
-        @include body-copy;
+  &__quote {
+    @include subheader;
+    font-weight: 700;
+    padding-top: 16px;
+    padding-bottom: 8px;
+  }
 
-        @include tablet{
-            padding:0;
-        }
-    }
+  &__credit {
+    @include body-copy;
+    font-weight: 700;
+    padding-bottom: 24px;
+  }
 }
 
+.bio {
+  &__title {
+    @include subheader;
+    font-weight: 700;
+  }
 
-.photo{
-    background-color: $secondary-white;
-
-    &__title{
-        @include section-head;
-        @include desktop{
-            padding-left:80px;
-            margin:0 36px;
-        }
+  &__descriptions {
+    @include tablet {
+      @include flex(space-evenly, center);
+      gap: 20px;
     }
+  }
 
-    &__images {
-
-        @include tablet{
-            @include flex(space-evenly,center);
-            flex-wrap:wrap;
-            gap:8px;
-            padding:0 24px 36px;
-        }
-
-        @include desktop{
-            margin: 0 64px 0px;
-        }
-    }
-
-    &__image{
-        filter: grayscale(100%);
-        width:100%;
-        padding:0 16px 16px;
-
-            &:hover{
-            filter: grayscale(0%);
-            }
-        
-            @include tablet{
-                width:30%;
-                padding:0 0 8px;
-            }
-        }
+  &__description {
+    @include body-copy;
+    padding: 16px 0;
+  }
 }
 
-.footer{
-    background-color:$primary-black;
-    color:$primary-white;
+.photo {
+  background-color: $secondary-white;
 
+  &__title {
+    @include section-head;
+    padding: 24px 16px 16px;
+    @include desktop {
+      padding-left: 80px;
+      margin: 0 36px;
+    }
+  }
 
-    @include tablet{
-        padding:0;
-        position:relative;
+  &__images {
+    @include tablet {
+      @include flex(space-evenly, center);
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0 24px 36px;
     }
 
-    @include desktop{
-        padding-left:80px;
+    @include desktop {
+      margin: 0 64px 0px;
+    }
+  }
+
+  &__image {
+    filter: grayscale(100%);
+    width: 100%;
+    padding: 0 16px 16px;
+
+    &:hover {
+      filter: grayscale(0%);
     }
 
-    &__title{
-        @include section-head;
+    @include tablet {
+      width: 30%;
+      padding: 0 0 8px;
     }
-
-    &__contact{
-        @include tablet{
-            @include flex (flex-start,baseline);
-        }
-
-    }
-
-    &__mgmts{
-        @include tablet{
-            @include flex (flex-start,stretch);
-            gap:16px;
-        }
-    }
-
-    &__logo{
-        margin-top:10px;
-        padding:16px 16px 0 16px;
-        @include tablet{
-            position:absolute;
-            bottom:340px;
-            left:600px;
-        }
-
-        @include desktop{
-            position:absolute;
-            bottom:340px;
-            left:1040px;
-        }
-    }
-
-    &__copyright{
-        @include footer-copy;
-        font-size:11px;
-        @include tablet{
-            @include footer-copy;
-            padding:36px;
-        }
-    }
+  }
 }
 
-.mgmt{
+.footer {
+  background-color: $primary-black;
+  color: $primary-white;
+
+  @include tablet {
+    @include flex(flex-start, stretch, column);
+    padding: 36px;
+    position: relative;
+  }
+
+  @include desktop {
+    padding-left: 80px;
+  }
+
+  &__title {
+    @include section-head;
+    padding: 24px 16px;
+  }
+
+  &__contact {
+    @include tablet {
+      @include flex(flex-start, baseline);
+    }
+  }
+
+  &__mgmts {
+    @include tablet {
+      @include flex(space-around, stretch);
+    }
+  }
+
+  &__logo {
+    margin-top: 10px;
+    padding: 16px 16px 0 16px;
+    @include tablet {
+      position: absolute;
+      bottom: 320px;
+      left: 600px;
+    }
+
+    @include desktop {
+      position: absolute;
+      bottom: 320px;
+      left: 1040px;
+    }
+  }
+
+  &__copyright {
     @include footer-copy;
-    padding:0;
+    font-size: 11px;
+    padding: 16px;
 
-    @include tablet{
-        padding-left:36px;
-        padding-bottom:36px;
+    @include tablet {
+      @include footer-copy;
     }
-
-
-    &__name{
-        @include footer-copy;
-        font-weight:700;
-        @include tablet{
-            padding-left:0;
-            padding-bottom:36px;
-        }
-    }
-
-    &__address, &__agent{
-        padding: 0 16px;
-        @include tablet{
-            padding-left:0;
-        }
-    }
-
-    &__city, &__country{
-        padding-top:0;
-        padding-left:16px;
-        padding-bottom:16px;
-        @include tablet{
-            padding-left:0;
-            padding-bottom:36px;
-        }
-    }
-
-    &__email{
-        @include tablet{
-            padding:0;
-        }
-    }
-
+  }
 }
 
+.social {
+  width: 50%;
+  padding-left: 16px;
+  @include flex(space-between, center);
 
-.social{
-    width:50%;
-    @include flex (space-between,center);
+  @include tablet {
+    width: 15%;
+    @include flex(space-between, center);
+  }
+}
 
-    @include tablet{
-        padding-left:0;
-        width:15%;
-        @include flex (space-between, center);
-        }
+.mgmt {
+  @include footer-copy;
+
+  &__name {
+    font-weight: 700;
+    padding: 16px;
+
+    @include tablet {
+      padding-bottom: 24px;
     }
+  }
+
+  &__address,
+  &__agent {
+    padding-left: 16px;
+  }
+
+  &__city,
+  &__country {
+    padding: 0 16px 16px;
+    @include tablet {
+      padding-bottom: 24px;
+    }
+  }
+
+  &__email {
+    padding-left: 16px;
+    @include tablet {
+    }
+  }
+}
