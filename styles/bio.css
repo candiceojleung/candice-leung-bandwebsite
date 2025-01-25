@@ -33,7 +33,6 @@ a {
   .header {
     display: flex;
     gap: 36px;
-    padding: 24px 0 24px 36px;
   }
 }
 @media (min-width: 80rem) {
@@ -50,7 +49,7 @@ a {
 }
 @media (min-width: 48rem) {
   .header__link {
-    padding: 0;
+    padding: 24px 0 24px 36px;
   }
 }
 .header__logo {
@@ -67,7 +66,6 @@ a {
   justify-content: space-around;
   align-items: stretch;
   flex-direction: row;
-  padding-bottom: 16px;
 }
 @media (min-width: 48rem) {
   .navbar__list {
@@ -75,14 +73,13 @@ a {
     line-height: 22px;
   }
 }
-@media (min-width: 48rem) {
-  .navbar__list {
-    padding: 0;
-  }
-}
 .navbar__link {
-  color: #E1E1E1;
-  padding: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 16px;
+  height: 36px;
+  width: 50%;
 }
 .navbar__link:hover, .navbar__link:active {
   color: #FFFFFF;
@@ -91,14 +88,15 @@ a {
 }
 @media (min-width: 48rem) {
   .navbar__link {
-    padding-bottom: 22px;
-    color: #E1E1E1;
+    margin-top: 40px;
+    margin-right: 10px;
+    margin-left: 36px;
+    padding-bottom: 36px;
+    border-bottom: 2px solid transparent;
   }
-  .navbar__link:hover, .navbar__link:active {
-    color: #FFFFFF;
-    font-weight: 700;
-    border-bottom: 2px solid #FFFFFF;
-  }
+}
+.navbar__link--hover {
+  color: #E1E1E1;
 }
 
 .hero {
@@ -179,8 +177,7 @@ a {
   line-height: 22px;
   font-weight: 500;
   font-weight: 700;
-  padding-top: 16px;
-  padding-bottom: 8px;
+  padding: 8px 0;
 }
 @media (min-width: 48rem) {
   .intro__quote {
@@ -313,7 +310,6 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-item: center;
     position: relative;
     padding: 36px 36px 0px;
   }
@@ -340,7 +336,7 @@ a {
   .footer__contact {
     display: flex;
     justify-content: flex-start;
-    align-item: center;
+    align-items: center;
   }
 }
 @media (min-width: 48rem) {
