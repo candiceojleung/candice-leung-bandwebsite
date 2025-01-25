@@ -31,34 +31,33 @@
 }
 
 .navbar {
-
   &__list {
     list-style: none;
     @include body-copy;
     @include flex(space-around, stretch);
-    }
+  }
 
   &__link {
-    display:flex; 
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-bottom: 16px;
-    height:36px; 
+    height: 36px;
     @include hover;
     width: 50%;
 
     @include tablet {
-      margin-top:40px;
-      margin-right:10px;
-      margin-left:36px;
-      padding-bottom:36px;
-      border-bottom:2px solid transparent;
-      }
+      margin-top: 40px;
+      margin-right: 10px;
+      margin-left: 36px;
+      padding-bottom: 36px;
+      border-bottom: 2px solid transparent;
+    }
 
     &--hover {
       color: $secondary-grey;
-      }
     }
+  }
 }
 
 .hero {

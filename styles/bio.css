@@ -22,7 +22,7 @@
 
 a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .header {
@@ -82,9 +82,9 @@ a {
   width: 50%;
 }
 .navbar__link:hover, .navbar__link:active {
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: 700;
-  border-bottom: 2px solid #FFFFFF;
+  border-bottom: 2px solid #ffffff;
 }
 @media (min-width: 48rem) {
   .navbar__link {
@@ -96,7 +96,7 @@ a {
   }
 }
 .navbar__link--hover {
-  color: #E1E1E1;
+  color: #e1e1e1;
 }
 
 .hero {
@@ -117,7 +117,7 @@ a {
   font-weight: 700;
   padding: 24px 16px 16px;
   height: 65vw;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 @media (min-width: 48rem) {
   .hero__title {
@@ -244,7 +244,7 @@ a {
 }
 
 .photo {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 .photo__title {
   font-size: 24px;
@@ -303,7 +303,7 @@ a {
 
 .footer {
   background-color: #323232;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 @media (min-width: 48rem) {
   .footer {
