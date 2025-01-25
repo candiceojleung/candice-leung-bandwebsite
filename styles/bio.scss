@@ -230,7 +230,7 @@
 
   &__mgmts {
     @include tablet {
-      @include flex(flex-start, stretch);
+      @include flex;
     }
 
     @include desktop {
