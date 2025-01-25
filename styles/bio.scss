@@ -37,6 +37,10 @@
     @include body-copy;
     @include flex(space-around, stretch);
     padding-bottom: 16px;
+
+    @include tablet {
+      padding: 0;
+    }
   }
 
   &__link {
@@ -45,8 +49,8 @@
     @include hover;
 
     @include tablet {
+      padding-bottom: 22px;
       color: $secondary-grey;
-      padding: 0 16px 24px;
       @include hover;
     }
   }
@@ -78,19 +82,28 @@
 }
 
 .intro {
-  @include desktop {
-    padding-left: 80px;
-  }
   &__title {
     @include section-head;
     padding: 24px 16px 16px;
+
+    @include tablet {
+      padding: 48px 36px 36px;
+    }
+
+    @include desktop {
+      padding: 48px 80px 36px;
+    }
   }
 
   &__paragraph {
     padding: 0 16px;
 
+    @include tablet {
+      padding: 0 100px 0;
+    }
+
     @include desktop {
-      width: 70%;
+      padding: 0 170px 0;
     }
   }
 
@@ -103,12 +116,20 @@
     font-weight: 700;
     padding-top: 16px;
     padding-bottom: 8px;
+
+    @include desktop {
+      width: 84%;
+    }
   }
 
   &__credit {
     @include body-copy;
     font-weight: 700;
     padding-bottom: 24px;
+
+    @include tablet {
+      padding-bottom: 36px;
+    }
   }
 }
 
@@ -137,9 +158,13 @@
   &__title {
     @include section-head;
     padding: 24px 16px 16px;
+
+    @include tablet {
+      padding: 48px 36px 36px;
+    }
+
     @include desktop {
-      padding-left: 80px;
-      margin: 0 36px;
+      padding: 48px 80px 36px;
     }
   }
 
@@ -152,7 +177,8 @@
     }
 
     @include desktop {
-      margin: 0 64px 0px;
+      padding: 0 56px 36px;
+      gap: 16px;
     }
   }
 
@@ -177,66 +203,79 @@
   color: $primary-white;
 
   @include tablet {
-    @include flex(flex-start, stretch, column);
-    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-item: center;
     position: relative;
+    padding: 36px 36px 0px;
   }
 
   @include desktop {
-    padding-left: 80px;
+    padding: 48px 80px 36px;
   }
 
   &__title {
     @include section-head;
     padding: 24px 16px;
+
   }
 
   &__contact {
     @include tablet {
-      @include flex(flex-start, baseline);
+      display: flex;
+      justify-content: flex-start;
+      align-item: center;
     }
   }
 
   &__mgmts {
     @include tablet {
-      @include flex(space-around, stretch);
+      @include flex(flex-start, stretch);
     }
   }
 
   &__logo {
     margin-top: 10px;
     padding: 16px 16px 0 16px;
+
     @include tablet {
+      padding: 0;
+      margin-top: 0;
       position: absolute;
-      bottom: 320px;
+      bottom: 264px;
       left: 600px;
     }
 
+    @include between{
+      bottom:264px;
+      left:850px;
+    }
+
     @include desktop {
-      position: absolute;
-      bottom: 320px;
-      left: 1040px;
+      bottom: 310px;
+      left: 1080px;
     }
   }
 
   &__copyright {
-    @include footer-copy;
     font-size: 11px;
     padding: 16px;
 
     @include tablet {
-      @include footer-copy;
+      font-size: 14px;
+      padding: 36px 16px;
     }
   }
 }
 
 .social {
-  width: 50%;
+  width: 10rem;
   padding-left: 16px;
   @include flex(space-between, center);
 
   @include tablet {
-    width: 15%;
+    width: 8rem;
     @include flex(space-between, center);
   }
 }

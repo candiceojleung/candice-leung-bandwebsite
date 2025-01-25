@@ -7,11 +7,19 @@
   }
 }
 
+@mixin between{
+  @media(min-width: 985px) and (max-width: 1279px){
+    @content;
+  }
+}
+
+
 @mixin desktop {
   @media (min-width: $desktop-breakpoint) {
     @content;
   }
 }
+
 
 @mixin hover {
   &:hover,
