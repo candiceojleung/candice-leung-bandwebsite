@@ -375,24 +375,26 @@ a {
   }
 }
 .footer__logo {
-  padding: 1rem 0 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1rem 0;
 }
 @media (min-width: 48rem) {
   .footer__logo {
+    margin-top: 0;
     position: absolute;
-    bottom: 16.5rem;
+    bottom: 17.1875rem;
     left: 37.5rem;
   }
 }
 @media (min-width: 61.5625rem) and (max-width: 79.9375rem) {
   .footer__logo {
-    bottom: 16.5rem;
+    bottom: 17.1875rem;
     left: 53.125rem;
   }
 }
 @media (min-width: 80rem) {
   .footer__logo {
-    bottom: 18.125rem;
+    bottom: 19.6875rem;
     left: 67.5rem;
   }
 }
@@ -423,7 +425,7 @@ a {
 
 .mgmt__name {
   font-weight: 700;
-  padding: 1rem;
+  padding: 1.5rem 1rem 1rem;
 }
 @media (min-width: 48rem) {
   .mgmt__name {
@@ -434,7 +436,7 @@ a {
   padding-left: 1rem;
 }
 .mgmt__city, .mgmt__country {
-  padding: 0 1rem;
+  padding: 0 1rem 1rem;
 }
 @media (min-width: 48rem) {
   .mgmt__city, .mgmt__country {

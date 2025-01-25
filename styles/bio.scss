@@ -240,21 +240,23 @@
   }
 
   &__logo {
-    padding: 1rem 0 1rem;
+    margin-top:1.5rem;
+    padding: 1rem 1rem 0;
 
     @include tablet {
+      margin-top:0;
       position: absolute;
-      bottom: 16.5rem;
+      bottom:17.1875rem;
       left: 37.5rem;
     }
 
     @include between {
-      bottom: 16.5rem;
+      bottom:17.1875rem;
       left: 53.125rem;
     }
 
     @include desktop {
-      bottom: 18.125rem;
+      bottom: 19.6875rem;
       left: 67.5rem;
     }
   }
@@ -283,7 +285,7 @@
 .mgmt {
   &__name {
     font-weight: 700;
-    padding: 1rem;
+    padding: 1.5rem 1rem 1rem;
 
     @include tablet {
       padding-bottom: 1.5rem;
@@ -297,7 +299,7 @@
 
   &__city,
   &__country {
-    padding: 0 1rem;
+    padding: 0 1rem 1rem;
 
     @include tablet {
       padding-bottom: 1.5rem;
