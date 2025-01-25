@@ -8,7 +8,7 @@
 }
 
 @mixin between {
-  @media (min-width: 985px) and (max-width: 1279px) {
+  @media (min-width: 61.5625rem) and (max-width: 79.9375rem) {
     @content;
   }
 }
@@ -39,7 +39,7 @@
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
-  padding: 1.5rem 16px 16px;
+  padding: 1.5rem 1rem 1rem;
 
   @include tablet {
     font-size: 3.75rem;
@@ -88,17 +88,17 @@
 
   @include tablet {
     font-size: 0.875rem;
-    line-height:1.25rem;
+    line-height: 1.25rem;
   }
 }
 
 @mixin labelbutton {
-  font-size: 10px;
-  line-height:1.25rem;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
   font-weight: 700;
 
   @include tablet {
-    font-size: 12px;
-    line-height:1.25rem;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
   }
 }
