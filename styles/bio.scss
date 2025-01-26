@@ -136,6 +136,8 @@
 }
 
 .bio {
+  color: $primary-black;
+
   &__title {
     @include subheader;
     font-weight: 700;

@@ -216,6 +216,9 @@ a {
   }
 }
 
+.bio {
+  color: #323232;
+}
 .bio__title {
   font-size: 0.875rem;
   line-height: 1.375rem;
