@@ -120,7 +120,7 @@
       padding-top: 1.5rem;
     }
     @include desktop {
-      width: 70%;
+      width: 83%;
     }
   }
 
@@ -228,8 +228,19 @@
   }
 
   &__spacer {
-    flex-grow: 1;
+    @include tablet {
+      flex-grow: 1;
+    }
   }
+
+  &__aside {
+    display: none;
+
+    @include tablet {
+      @include flex(center, flex-end);
+    }
+  }
+
   &__mgmts {
     @include tablet {
       @include flex;
@@ -237,7 +248,7 @@
 
     @include desktop {
       @include flex(space-between);
-      width: 70%;
+      width: 65%;
     }
   }
 
@@ -247,14 +258,6 @@
 
     @include tablet {
       display: none;
-    }
-  }
-
-  &__logo-2 {
-    display: none;
-
-    @include tablet {
-      @include flex(flex-end, flex-end);
     }
   }
 
