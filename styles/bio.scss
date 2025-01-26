@@ -120,7 +120,7 @@
       padding-top: 1.5rem;
     }
     @include desktop {
-      width: 84%;
+      width: 70%;
     }
   }
 
@@ -188,7 +188,7 @@
   &__image {
     filter: grayscale(100%);
     width: 100%;
-    padding: 0 1rem;
+    padding: 0 1rem 1rem;
 
     &:hover {
       filter: grayscale(0%);
@@ -209,7 +209,6 @@
   @include tablet {
     @include flex;
     flex-direction: column;
-    position: relative;
     padding: 2.25rem 2.25rem 0;
   }
 
@@ -228,6 +227,9 @@
     }
   }
 
+  &__spacer {
+    flex-grow: 1;
+  }
   &__mgmts {
     @include tablet {
       @include flex;
@@ -244,20 +246,15 @@
     padding: 1rem 1rem 0;
 
     @include tablet {
-      margin-top: 0;
-      position: absolute;
-      bottom: 17.1875rem;
-      left: 37.5rem;
+      display: none;
     }
+  }
 
-    @include between {
-      bottom: 17.1875rem;
-      left: 53.125rem;
-    }
+  &__logo-2 {
+    display: none;
 
-    @include desktop {
-      bottom: 19.6875rem;
-      left: 67.5rem;
+    @include tablet {
+      @include flex(flex-end, flex-end);
     }
   }
 
