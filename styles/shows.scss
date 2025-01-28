@@ -1,0 +1,47 @@
+@use "../styles/partials/variables" as *;
+@use "../styles/partials/mixins" as *;
+@use "../styles/partials/typography" as *;
+@use "../styles/partials/global" as *;
+
+.hero {
+  background: {
+    image: linear-gradient(to top, rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
+      url("../../assets/images/hero-shows.jpg");
+    position: center;
+    size: cover;
+    repeat: no-repeat;
+  }
+  height: 80vw;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center; 
+  align-items:center;
+
+  &__sub {
+    @include subheader;
+    color: $primary-white;
+    padding: 1.5rem 1rem 0;
+    @include tablet {
+      padding: 2.25rem;
+    }
+    @include desktop {
+      padding: 2.25rem 5rem;
+    }
+  }
+
+  &__title {
+    @include page-head;
+    color: $primary-white;
+    width:90%;
+
+    @include desktop {
+      padding-left: 5rem;
+    }
+  }
+}
+
+iframe{
+    width:95%;
+    height:30%; 
+}
