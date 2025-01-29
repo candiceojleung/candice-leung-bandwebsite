@@ -1,16 +1,16 @@
 @font-face {
   font-family: "NunitoSans";
-  src: url("../../assets/font/NunitoSans-Bold.woff") format("woff"), url("../../assets/font/NunitoSans-Bold.woff2") format("woff2");
+  src: url("../../assets/fonts/NunitoSans-Bold.woff") format("woff"), url("../../assets/fonts/NunitoSans-Bold.woff2") format("woff2");
   font-weight: 700;
 }
 @font-face {
   font-family: "NunitoSans";
-  src: url("../../assets/font/NunitoSans-Medium.woff") format("woff"), url("../../assets/font/NunitoSans-Medium.woff2") format("woff2");
+  src: url("../../assets/fonts/NunitoSans-Medium.woff") format("woff"), url("../../assets/fonts/NunitoSans-Medium.woff2") format("woff2");
   font-weight: 500;
 }
 @font-face {
   font-family: "NunitoSans";
-  src: url("../../assets/font/NunitoSans-Regular.woff") format("woff"), url("../../assets/font/NunitoSans-Regular.woff2") format("woff2");
+  src: url("../../assets/fonts/NunitoSans-Regular.woff") format("woff"), url("../../assets/fonts/NunitoSans-Regular.woff2") format("woff2");
   font-weight: 400;
 }
 * {
@@ -54,6 +54,11 @@ a {
     padding: 1.5rem 0 1.5rem 2.25rem;
   }
 }
+@media (min-width: 80rem) {
+  .header__link {
+    padding: 2.25rem 0 2.25rem;
+  }
+}
 .header__logo {
   max-height: 1.25rem;
   max-width: 7.5rem;
@@ -94,6 +99,12 @@ a {
     margin: 2.5rem 0.625rem 0 2.25rem;
     padding-bottom: 2.25rem;
     border-bottom: 0.125rem solid transparent;
+  }
+}
+@media (min-width: 80rem) {
+  .navbar__link {
+    margin: 56px 0.625rem 0 2.5rem;
+    padding-bottom: 56px;
   }
 }
 .navbar__link--hover {
@@ -184,6 +195,9 @@ a {
 .footer__logo {
   margin-top: 1.5rem;
   padding: 1rem 1rem 0;
+}
+.footer__logo--hidden {
+  padding: 0;
 }
 @media (min-width: 48rem) {
   .footer__logo {

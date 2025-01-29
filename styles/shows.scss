@@ -15,7 +15,7 @@
   width: 100%;
   display:flex;
   flex-direction:column;
-  justify-content:center; 
+  justify-content:center;
   align-items:center;
 
   &__sub {
@@ -23,7 +23,7 @@
     color: $primary-white;
     padding: 1.5rem 1rem 0;
     @include tablet {
-      padding: 2.25rem;
+      padding: 0 2.25rem;
     }
     @include desktop {
       padding: 2.25rem 5rem;
@@ -35,13 +35,11 @@
     color: $primary-white;
     width:90%;
 
+    @include tablet{
+      padding: 36px;
+    }
     @include desktop {
       padding-left: 5rem;
     }
   }
-}
-
-iframe{
-    width:95%;
-    height:30%; 
 }

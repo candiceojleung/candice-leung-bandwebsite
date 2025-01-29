@@ -30,3 +30,13 @@ const shows = [
     location: "San Francisco, CA",
   },
 ];
+
+
+const list = document.getElementById ('show-list');
+
+for (const showInfo of shows) {
+  const show=document.createElement('div');
+  show.className = "show__info"; 
+    show.textContent= showInfo.date + showInfo.venue + showInfo.location;
+    list.append(show);
+}
