@@ -89,7 +89,7 @@ a {
   height: 2.25rem;
   width: 50%;
 }
-.navbar__link:hover, .navbar__link:active {
+.navbar__link--underlined:hover, .navbar__link--underlined:active {
   color: #ffffff;
   font-weight: 700;
   border-bottom: 0.125rem solid #ffffff;

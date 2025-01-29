@@ -21,3 +21,13 @@ const comments = [
 
 const date = new Date("08/14/2024");
 console.log(date.toLocaleDateString()); // output: '8/14/2024'
+
+
+const comment = document.getElementById('form');
+
+const ar = [];
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+  
+});
