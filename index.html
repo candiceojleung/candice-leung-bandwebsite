@@ -135,8 +135,9 @@
       </section>
       <section id="form" class="form">
         <h2 class="form__title">Join the Conversation</h2>
+        <div class="form__join">
+        <img src="./assets/images/Mohan-muruge.jpg" class="form__image" alt="side profile of man">
         <div class="form__content">
-          <img src="./assets/images/Mohan-muruge.jpg" class="form__image" alt="side profile of man">
           <form id="commentForm" class="form__item">
               <label for="name" class="form__field">Name</label>
               <input
@@ -147,19 +148,21 @@
                 placeholder="Enter your name"
               />
 
-              <label for="comment" class="form__field">Comment</label>
-              <input
-                type="text"
-                id="comment"
-                class="form__text"
-                name="comment"
-                placeholder="Add a new comment"
-              />
+              <label for="comment-text" class="form__field">Comment</label>
+              <input 
+              type="text" 
+              id="comment-text"
+              class="form__paragraph"
+              name="comment-text"
+              placeholder="Add a new comment"/>
+              
             <button type="submit" id="button" name="button" class="button">
               Comment
             </button>
-          </form>
+          </div>
         </div>
+            <div id="comment-section" class="comment__section"></div>
+          </form>
       </section>
     </main>
     <footer class="footer">

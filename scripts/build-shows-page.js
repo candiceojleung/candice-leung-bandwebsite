@@ -39,37 +39,37 @@ for (const showObj of shows) {
 
   const showDate = document.createElement("div");
   showDate.classList.add("show__header");
-  showDate.innerHTML = "Date";
+  showDate.textContent = "Date";
   show.append(showDate);
 
   const dateInfo = document.createElement("p");
   dateInfo.classList.add("show__info--bold");
-  dateInfo.innerHTML = showObj.date;
+  dateInfo.textContent = showObj.date;
   show.append(dateInfo);
 
   const showVenue = document.createElement("div");
   showVenue.classList.add("show__header");
-  showVenue.innerHTML = "Venue";
+  showVenue.textContent = "Venue";
   show.append(showVenue);
 
   const venueInfo = document.createElement("p");
   venueInfo.classList.add("show__info");
-  venueInfo.innerHTML = showObj.venue;
+  venueInfo.textContent = showObj.venue;
   show.append(venueInfo);
 
   const showLocation = document.createElement("div");
   showLocation.classList.add("show__header");
-  showLocation.innerHTML = "Location";
+  showLocation.textContent = "Location";
   show.append(showLocation);
 
   const locationInfo = document.createElement("p");
   locationInfo.classList.add("show__info");
-  locationInfo.innerHTML = showObj.location;
+  locationInfo.textContent = showObj.location;
   show.append(locationInfo);
 
   const button = document.createElement("button");
   button.classList.add("button");
-  button.innerHTML = "buy tickets";
+  button.textContent = "buy tickets";
   show.append(button);
 
   list.append(show);
