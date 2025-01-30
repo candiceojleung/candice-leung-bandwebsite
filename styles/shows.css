@@ -154,6 +154,11 @@ a {
   }
 }
 @media (min-width: 48rem) {
+  .footer__title {
+    padding: 1.5rem 0rem;
+  }
+}
+@media (min-width: 48rem) {
   .footer__contact {
     display: flex;
     justify-content: flex-start;
@@ -213,7 +218,7 @@ a {
 @media (min-width: 48rem) {
   .footer__copyright {
     font-size: 0.875rem;
-    padding: 2.25rem 1rem;
+    padding: 2.25rem 0;
   }
 }
 
@@ -237,22 +242,32 @@ a {
 }
 @media (min-width: 48rem) {
   .mgmt__name {
-    padding-bottom: 1.5rem;
+    padding: 1.5rem 1.5rem 1.5rem 0;
   }
 }
 .mgmt__address, .mgmt__agent {
   padding-left: 1rem;
+}
+@media (min-width: 48rem) {
+  .mgmt__address, .mgmt__agent {
+    padding-left: 0rem;
+  }
 }
 .mgmt__city, .mgmt__country {
   padding: 0 1rem 1rem;
 }
 @media (min-width: 48rem) {
   .mgmt__city, .mgmt__country {
-    padding-bottom: 1.5rem;
+    padding: 0 1.5rem 1.5rem 0;
   }
 }
 .mgmt__email {
   padding-left: 1rem;
+}
+@media (min-width: 48rem) {
+  .mgmt__email {
+    padding-left: 0;
+  }
 }
 
 .button {
@@ -393,7 +408,7 @@ iframe {
 }
 @media (min-width: 48rem) {
   .show__title {
-    padding-bottom: 24px;
+    padding: 0 0 36px;
   }
 }
 @media (min-width: 48rem) {

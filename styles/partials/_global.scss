@@ -97,6 +97,10 @@ a {
   &__title {
     @include section-head;
     padding: 1.5rem 1rem;
+
+    @include tablet{
+      padding:1.5rem 0rem;
+    }
   }
 
   &__contact {
@@ -149,7 +153,7 @@ a {
 
     @include tablet {
       font-size: 0.875rem;
-      padding: 2.25rem 1rem;
+      padding: 2.25rem 0;
     }
   }
 }
@@ -170,13 +174,17 @@ a {
     padding: 1.5rem 1rem 1rem;
 
     @include tablet {
-      padding-bottom: 1.5rem;
+      padding: 1.5rem 1.5rem 1.5rem 0;
     }
   }
 
   &__address,
   &__agent {
     padding-left: 1rem;
+
+    @include tablet{
+      padding-left:0rem;
+    }
   }
 
   &__city,
@@ -184,12 +192,16 @@ a {
     padding: 0 1rem 1rem;
 
     @include tablet {
-      padding-bottom: 1.5rem;
+      padding: 0 1.5rem 1.5rem 0;
     }
   }
 
   &__email {
     padding-left: 1rem;
+
+    @include tablet{
+      padding-left:0;
+    }
   }
 }
 
