@@ -462,4 +462,17 @@ a {
     width: 30%;
     padding: 0 0 0.5rem;
   }
+}
+
+.form__content {
+  display: flex;
+}
+.form__image {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+.form__item {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=bio.css.map */

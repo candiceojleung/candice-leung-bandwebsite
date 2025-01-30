@@ -31,12 +31,49 @@ const shows = [
   },
 ];
 
+const list = document.getElementById("show-list");
 
-const list = document.getElementById ('show-list');
+for (const showObj of shows) {
+  const show = document.createElement("div");
+  show.classList.add ("shows__item");
 
-for (const showInfo of shows) {
-  const show=document.createElement('div');
-  show.className = "show__info"; 
-    show.textContent= showInfo.date + showInfo.venue + showInfo.location;
-    list.append(show);
-}
+
+const showDate =document.createElement("div");
+showDate.classList.add("show__header"); 
+showDate.innerHTML= "Date";
+show.append(showDate); 
+
+const dateInfo=document.createElement("p");
+dateInfo.classList.add("show__info");
+dateInfo.innerHTML=showObj.date;
+show.append(dateInfo);
+
+const showVenue=document.createElement("div");
+showVenue.classList.add("show__header");
+showVenue.innerHTML= "Venue";
+show.append(showVenue);
+
+const venueInfo=document.createElement("p");
+venueInfo.classList.add("show__info");
+venueInfo.innerHTML=showObj.venue;
+show.append(venueInfo);
+
+const showLocation=document.createElement("div");
+showLocation.classList.add("show__header");
+showLocation.innerHTML="Location";
+show.append(showLocation);
+
+const locationInfo=document.createElement("p");
+locationInfo.classList.add("show__info"); 
+locationInfo.innerHTML=showObj.location;
+show.append(locationInfo); 
+
+const button =document.createElement ("button");
+button.classList.add("button");
+button.innerHTML="buy tickets";
+show.append(button); 
+
+list.append(show);
+
+};
+
