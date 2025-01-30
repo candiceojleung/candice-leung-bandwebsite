@@ -54,11 +54,11 @@ a {
 
   &__link {
     @include flex(center, center);
-    padding-bottom: 1rem;
     height: 2.25rem;
     width: 50%;
 
     &--underlined{
+      width:100%;
       @include hover;
     }
 
@@ -203,13 +203,13 @@ a {
   border-radius:4px; 
   background-color:$primary-black;
   color:$primary-white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  @include flex (center, center);
   text-transform:uppercase; 
 
   @include tablet{
     width:150px;
+    margin:0 16px 16px;
+    padding:0; 
   }
 
   &:hover{

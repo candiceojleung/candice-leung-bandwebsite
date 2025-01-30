@@ -61,19 +61,36 @@ iframe{
   @include body-copy; 
   padding: 24px 16px 16px;
 
+  @include tablet{
+    padding: 48px 36px 36px;
+  }
+
   &__title{
     @include section-head; 
   }
 
-  &__date , &__venue , &__location{
-    display:none; 
-  }
+  &__headers{
+
     @include tablet{
       display:flex; 
-      justify-content:space-evenly; 
+      justify-content:flex-start; 
       align-items:baseline; 
-      color: $primary-silver;
+      text-transform:uppercase;
+      width:70%;
     }
+  }
+  &__date , &__venue , &__location{
+    display:none; 
+    
+    @include tablet{    
+      display:flex; 
+      color: $primary-silver;
+      padding: 36px 0; 
+      flex:1;
+
+
+    }
+  }
 
   &__item {
       &:hover{
@@ -85,12 +102,27 @@ iframe{
       &--active{
         background-color: $primary-silver;
       }
+
+      @include tablet{
+        display:flex;
+        justify-content:flex-start; 
+        align-content:center;
+      }
     }
+
+  &__spacer{
+    display:flex;
+    flex:1; 
+  }
 
    &__header{
     color:$primary-silver; 
     padding-top:16px;
     text-transform:uppercase;
+
+    @include tablet{
+      display:none; 
+    }
    }
 
    &__info{
@@ -102,6 +134,5 @@ iframe{
     padding:5px 0;
 
    }
-  }
-
+}
 

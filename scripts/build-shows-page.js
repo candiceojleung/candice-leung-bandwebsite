@@ -48,6 +48,11 @@ dateInfo.classList.add("show__info--bold");
 dateInfo.innerHTML=showObj.date;
 show.append(dateInfo);
 
+const dateSpacer=document.createElement("div");
+dateSpacer.classList.add ("show__spacer"); 
+dateSpacer.innerHTML=" ";
+show.append(dateSpacer); 
+
 const showVenue=document.createElement("div");
 showVenue.classList.add("show__header");
 showVenue.innerHTML= "Venue";
@@ -58,6 +63,11 @@ venueInfo.classList.add("show__info");
 venueInfo.innerHTML=showObj.venue;
 show.append(venueInfo);
 
+const venueSpacer=document.createElement("div");
+venueSpacer.classList.add ("show__spacer"); 
+venueSpacer.innerHTML=" ";
+show.append(venueSpacer); 
+
 const showLocation=document.createElement("div");
 showLocation.classList.add("show__header");
 showLocation.innerHTML="Location";
@@ -67,6 +77,11 @@ const locationInfo=document.createElement("p");
 locationInfo.classList.add("show__info"); 
 locationInfo.innerHTML=showObj.location;
 show.append(locationInfo); 
+
+const locationSpacer=document.createElement("div");
+locationSpacer.classList.add ("show__spacer"); 
+locationSpacer.innerHTML=" ";
+show.append(locationSpacer); 
 
 const button =document.createElement ("button");
 button.classList.add("button");
