@@ -261,7 +261,7 @@ a {
   font-weight: 400;
   height: 40px;
   width: 100%;
-  margin-top: 16px;
+  margin-bottom: 16px;
   padding: 0 32px;
   border-radius: 4px;
   background-color: #323232;
@@ -281,7 +281,7 @@ a {
 @media (min-width: 48rem) {
   .button {
     width: 150px;
-    margin: 0 16px 16px;
+    margin: 0;
     padding: 0;
   }
 }
@@ -367,7 +367,6 @@ iframe {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
-  padding: 24px 16px 16px;
 }
 @media (min-width: 48rem) {
   .show {
@@ -384,6 +383,7 @@ iframe {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
+  padding: 24px 16px;
 }
 @media (min-width: 48rem) {
   .show__title {
@@ -392,12 +392,18 @@ iframe {
   }
 }
 @media (min-width: 48rem) {
+  .show__title {
+    padding-bottom: 24px;
+  }
+}
+@media (min-width: 48rem) {
   .show__headers {
     display: flex;
     justify-content: flex-start;
     align-items: baseline;
     text-transform: uppercase;
-    width: 70%;
+    width: 80%;
+    padding-bottom: 24px;
   }
 }
 .show__date, .show__venue, .show__location {
@@ -407,33 +413,31 @@ iframe {
   .show__date, .show__venue, .show__location {
     display: flex;
     color: #afafaf;
-    padding: 36px 0;
     flex: 1;
   }
+}
+.show__item {
+  padding: 16px;
+  border-bottom: 1px solid #afafaf;
 }
 .show__item:hover {
   background-color: #fafafa;
 }
-.show__item:active {
-  background-color: #afafaf;
-}
-.show__item--active {
+.show__item--active, .show__item:active {
   background-color: #afafaf;
 }
 @media (min-width: 48rem) {
   .show__item {
     display: flex;
     justify-content: flex-start;
-    align-content: center;
+    align-items: center;
+    padding: 36px 0;
+    height: 48px;
+    border-bottom: 1px solid #afafaf;
   }
-}
-.show__spacer {
-  display: flex;
-  flex: 1;
 }
 .show__header {
   color: #afafaf;
-  padding-top: 16px;
   text-transform: uppercase;
 }
 @media (min-width: 48rem) {
@@ -442,9 +446,26 @@ iframe {
   }
 }
 .show__info {
-  padding: 5px 0;
+  padding-bottom: 16px;
+}
+@media (min-width: 48rem) {
+  .show__info {
+    padding: 0;
+    flex: 1;
+  }
 }
 .show__info--bold {
   font-weight: 700;
-  padding: 5px 0;
+  padding-bottom: 16px;
+}
+@media (min-width: 48rem) {
+  .show__info--bold {
+    flex: 1;
+    padding: 0;
+  }
+}
+@media (min-width: 80rem) {
+  .show__info--bold {
+    flex: 2;
+  }
 }/*# sourceMappingURL=shows.css.map */

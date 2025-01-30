@@ -34,8 +34,8 @@ a {
       padding: 1.5rem 0 1.5rem 2.25rem;
     }
 
-    @include desktop{
-      padding: 2.25rem 0  2.25rem;
+    @include desktop {
+      padding: 2.25rem 0 2.25rem;
     }
   }
 
@@ -57,11 +57,10 @@ a {
     height: 2.25rem;
     width: 50%;
 
-    &--underlined{
-      width:100%;
+    &--underlined {
+      width: 100%;
       @include hover;
     }
-
 
     @include tablet {
       margin: 2.5rem 0.625rem 0 2.25rem;
@@ -69,8 +68,8 @@ a {
       border-bottom: 0.125rem solid transparent;
     }
 
-    @include desktop{
-      margin:  56px 0.625rem 0 2.5rem;
+    @include desktop {
+      margin: 56px 0.625rem 0 2.5rem;
       padding-bottom: 56px;
     }
 
@@ -135,8 +134,8 @@ a {
     margin-top: 1.5rem;
     padding: 1rem 1rem 0;
 
-    &--hidden{
-      padding:0;
+    &--hidden {
+      padding: 0;
     }
 
     @include tablet {
@@ -194,25 +193,25 @@ a {
   }
 }
 
-.button{
+.button {
   @include body-copy;
-  height:40px;
-  width:100%; 
-  margin-top:16px;
-  padding:0 32px; 
-  border-radius:4px; 
-  background-color:$primary-black;
-  color:$primary-white;
-  @include flex (center, center);
-  text-transform:uppercase; 
+  height: 40px;
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 0 32px;
+  border-radius: 4px;
+  background-color: $primary-black;
+  color: $primary-white;
+  @include flex(center, center);
+  text-transform: uppercase;
 
-  @include tablet{
-    width:150px;
-    margin:0 16px 16px;
-    padding:0; 
+  @include tablet {
+    width: 150px;
+    margin: 0;
+    padding: 0;
   }
 
-  &:hover{
-    background-color:$secondary-black; 
+  &:hover {
+    background-color: $secondary-black;
   }
 }
