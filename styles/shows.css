@@ -259,6 +259,7 @@ a {
   font-weight: 400;
   height: 40px;
   width: 100%;
+  margin-top: 16px;
   padding: 0 32px;
   border-radius: 4px;
   background-color: #323232;
@@ -309,7 +310,7 @@ a {
 }
 @media (min-width: 48rem) {
   .hero__sub {
-    padding: 0 2.25rem;
+    padding: 2.25rem;
   }
 }
 @media (min-width: 80rem) {
@@ -346,12 +347,22 @@ a {
 iframe {
   height: 50%;
 }
+@media (min-width: 48rem) {
+  iframe {
+    height: -moz-fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
 
 .show {
   color: #323232;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
+  padding: 24px 16px 16px;
 }
 @media (min-width: 48rem) {
   .show {
@@ -389,4 +400,15 @@ iframe {
 }
 .show__item--active {
   background-color: #afafaf;
+}
+.show__header {
+  color: #afafaf;
+  padding-top: 16px;
+}
+.show__info {
+  padding: 5px 0;
+}
+.show__info--bold {
+  font-weight: 700;
+  padding: 5px 0;
 }/*# sourceMappingURL=shows.css.map */

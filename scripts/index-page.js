@@ -34,8 +34,8 @@ for (const commentObj of comments) {
 // avatar.classList.add ("comment__avatar"); 
 // comment.append("avatar");
 
-const divider=document.createElement('div');
-divider.classList.add ("comment__divider");
+// const divider=document.createElement('div');
+// divider.classList.add ("divider");
 
 const commentName=document.createElement("p");
 commentName.classList.add("comment__name");

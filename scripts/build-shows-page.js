@@ -44,7 +44,7 @@ showDate.innerHTML= "Date";
 show.append(showDate); 
 
 const dateInfo=document.createElement("p");
-dateInfo.classList.add("show__info");
+dateInfo.classList.add("show__info--bold");
 dateInfo.innerHTML=showObj.date;
 show.append(dateInfo);
 

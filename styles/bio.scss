@@ -160,6 +160,14 @@
   &__title{
     @include section-head;
     padding: 24px 16px;  
+
+    @include tablet{
+      padding:48px 36px 36px;
+    }
+    
+    @include desktop{
+      padding:3rem 5rem 2.25rem;
+    }
   }
   &__content{
     display:flex;
