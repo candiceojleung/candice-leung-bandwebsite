@@ -5,7 +5,7 @@ const shows = [
     location: "San Francisco, CA",
   },
   {
-    date: "Tues Sept 17 2024",
+    date: "Tue Sept 17 2024",
     venue: "Pier 3 East",
     location: "San Francisco, CA",
   },
@@ -35,7 +35,7 @@ const list = document.getElementById("show-list");
 
 for (const showObj of shows) {
   const show = document.createElement("div");
-  show.classList.add ("shows__item");
+  show.classList.add ("show__item");
 
 
 const showDate =document.createElement("div");
@@ -77,3 +77,17 @@ list.append(show);
 
 };
 
+
+list.addEventListener("click", (e) => {
+  const el = e.target.closest(".show__item");
+
+if (!el) {
+  return;
+}
+  const activeClass = "show__item--active";
+  const active = list.querySelector(`.${activeClass}`);
+if (active) {
+    active.classList.remove(activeClass);
+  }
+  el.classList.add(activeClass);
+});

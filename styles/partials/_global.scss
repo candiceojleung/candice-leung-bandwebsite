@@ -193,4 +193,26 @@ a {
     padding-left: 1rem;
   }
 }
+
+.button{
+  @include body-copy;
+  height:40px;
+  width:100%; 
+  padding:0 32px; 
+  border-radius:4px; 
+  background-color:$primary-black;
+  color:$primary-white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-transform:uppercase; 
+
+  @include tablet{
+    width:150px;
+  }
+
+  &:hover{
+    background-color:$secondary-black; 
+  }
+}
  

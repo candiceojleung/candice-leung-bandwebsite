@@ -15,7 +15,6 @@
   width: 100%;
   display:flex;
   flex-direction:column;
-  justify-content:center;
   align-items:center;
 
   &__sub {
@@ -43,3 +42,41 @@
     }
   }
 }
+
+iframe{
+  height: 50%;
+
+}
+
+.show{
+  color:$primary-black;
+  @include body-copy; 
+
+  &__title{
+    @include section-head; 
+  }
+
+  &__date , &__venue , &__location{
+    display:none; 
+  }
+    @include tablet{
+      display:flex; 
+      justify-content:space-evenly; 
+      align-items:baseline; 
+      color: $primary-silver;
+    }
+
+  &__item {
+      &:hover{
+        background-color:$secondary-white;
+      }
+      &:active{
+        background-color: $primary-silver;
+      }
+      &--active{
+        background-color: $primary-silver;
+      }
+    }
+  }
+
+
