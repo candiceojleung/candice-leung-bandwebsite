@@ -404,6 +404,7 @@ iframe {
 .show__header {
   color: #afafaf;
   padding-top: 16px;
+  text-transform: uppercase;
 }
 .show__info {
   padding: 5px 0;
