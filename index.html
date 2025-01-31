@@ -16,6 +16,7 @@
           alt="bandsite-logo"
         />
       </a>
+
       <nav class="navbar">
         <ul class="navbar__list">
           <li class="navbar__link">
@@ -33,6 +34,7 @@
         </ul>
       </nav>
     </header>
+
     <main>
       <section class="hero">
         <h1 class="hero__title">The Bees Knees</h1>
@@ -82,7 +84,6 @@
           </section>
         </div>
       </section>
-
       <section class="photo">
         <h2 class="photo__title">Photo Gallery</h2>
         <div class="photo__images">
@@ -133,36 +134,36 @@
           />
         </div>
       </section>
-      <section id="form" class="form">
+      <section id="formSection" class="form">
         <h2 class="form__title">Join the Conversation</h2>
-        <div class="form__join">
-        <img src="./assets/images/Mohan-muruge.jpg" class="form__image" alt="side profile of man">
-        <div id= "formContent" class="form__content">
-          <form id="commentForm" class="form__item">
-              <label for="name" class="form__field">Name</label>
-              <input
-                type="text"
-                id="name"
-                class="form__text"
-                name="name"
-                placeholder="Enter your name"
-              />
-
-              <label for="comment-text" class="form__field">Comment</label>
-              <input 
-              type="text" 
-              id="comment-text"
-              class="form__paragraph"
-              name="comment-text"
-              placeholder="Add a new comment"/>
-              
-            <button type="submit" id="button" name="button" class="button">
-              Comment
-            </button>
-          </div>
+        <div class="form__avatar">
+          <img
+            src="./assets/images/Mohan-muruge.jpg"
+            class="form__image"
+            alt="side profile of man"
+          />
         </div>
-            <div id="comment-section" class="comment__section"></div>
-          </form>
+        <form id="form" class="form__fields">
+          <label for="name" class="form__field">Name</label>
+          <input
+            type="text"
+            id="formName"
+            class="form__name"
+            name="name"
+            placeholder="Enter your name"
+          />
+          <label for="comment" class="form__field">Comment</label>
+          <input
+            type="text"
+            id="formComment"
+            class="form__comment"
+            name="comment-text"
+            placeholder="Add a new comment"
+          />
+          <button id="button" name="button" class="button">Comment</button>
+        </form>
+          <div id="commentSection" class="comment__section"></div>
+          <!-- will be built out in javascript -->
       </section>
     </main>
     <footer class="footer">

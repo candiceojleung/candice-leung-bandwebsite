@@ -19,67 +19,64 @@ const comments = [
   },
 ];
 
-const date = new Date();
-console.log(date.toLocaleDateString())
-; // output: '8/14/2024'
+const formEl = document.getElementById("form");
+const commentsEl= document.getElementById("commentSection"); 
 
-// const dateToday = new Date();
-// const day= dateToday.getDay();
-// const month=dateToday.getMonth();
-// const year=dateToday.getYear();
-// console.log(dateToday);
 
-const form = document.getElementById("formContent");
-const formComment = document.getElementById("comment-section");
+function displayComments(){
+  for (let i=0; i<comments.length;i++){
+    const comment =comments[i]; 
 
-for (const commentObj of comments) {
-  const comment = document.createElement("div");
-  comment.classList.add("comment__item");
+    let commentSect =document.createElement("div");
+    commentSect.classList.add("comment__avatar");
+    commentsEl.prepend(commentSect); 
 
-  const avatar = document.createElement("div");
-  avatar.classList.add("comment__avatar");
-  avatar.textContent = " ";
-  comment.append(avatar);
+    let commentImage=document.createElement("div");
+    commentImage.classList.add("comment__image");
+    commentSect.append(commentImage); 
 
-  const text = document.createElement("div");
-  text.classList.add("comment__context");
-  comment.append(text);
+    let commentContainer=document.createElement("div"); 
+    commentContainer.classList.add("comment__item"); 
+    commentSect. append(commentContainer); 
 
-  const info = document.createElement("div");
-  info.classList.add("comment__info");
-  text.append(info);
+    let commentItem=document.createElement("div");
+    commentContainer.classList.add("comment__container"); 
+    commentContainer.append(commentItem); 
 
-  const commentName = document.createElement("p");
-  commentName.classList.add("comment__name");
-  commentName.textContent = commentObj.name;
-  info.append(commentName);
+    let nameEl=document.createElement("p"); 
+    nameEl.classList.add("comment__name"); 
+    nameEl.textContent= comment.name; 
+    commentItem.append(nameEl); 
 
-  const commentDate = document.createElement("p");
-  commentDate.classList.add("comment__date");
-  commentDate.textContent = commentObj.date;
-  info.append(commentDate);
+    let dateEl=document.createElement("p");
+    dateEl.classList.add("comment__date"); 
+    dateEl.textContent=comment.date; 
+    commentItem.append(dateEl); 
 
-  const commentText = document.createElement("p");
-  commentText.classList.add("comment__text");
-  commentText.textContent = commentObj.comment;
-  text.append(commentText);
-
-  formComment.prepend(comment);
+    let commentEl=document.createElement("p");
+    commentEl.classList.add("comment__comment");
+    commentEl.textContent =comment.comment;
+    commentContainer.append(commentEl);
+  }
 }
 
-// // Event listener for form submission
-// function displayComment(commentsObj) {
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
+displayComments(); 
 
-//   const newComment = {
-//     name: e.target.name.value,
-//     date: e.target.date.value,
-//     comment: e.target.comment.value,
-//   };
-//   comments.push(newComment);
+formEl.addEventListener("submit", (e) => {
+  e.preventDefault();
 
-//   formComment.replaceChildren;
-//   comments.forEach(displayComment); 
-// });
-// };
+const date = new Date();
+const dateOnly = date.toLocaleDateString();
+
+  let newComment = {
+    name: e.target.formName.value,
+    comment: e.target.formComment.value,
+    date: dateOnly,
+  };
+
+  comments.push(newComment);
+  commentsEl.innerHTML = "";
+  displayComments();
+ 
+  formEl.reset();
+});
