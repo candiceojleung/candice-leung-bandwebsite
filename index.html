@@ -136,34 +136,30 @@
       </section>
       <section id="formSection" class="form">
         <h2 class="form__title">Join the Conversation</h2>
-        <div class="form__avatar">
-          <img
-            src="./assets/images/Mohan-muruge.jpg"
-            class="form__image"
-            alt="side profile of man"
-          />
+        <div class="form__container">
+          <div class="form__avatar">
+            <img
+              src="./assets/images/Mohan-muruge.jpg"
+              class="form__image"
+              alt="side profile of man"
+            />
+          </div>
+          <form id="form" class="form__fields">
+            <label for="name" class="form__field">Name</label>
+            <input
+              type="text"
+              id="formName"
+              class="form__name"
+              name="name"
+              placeholder="Enter your name"
+            />
+            <label for="comment" class="form__field">Comment</label>
+            <textarea class="form__comment" id="formComment" name="formComment" placeholder="Add a new comment"></textarea>
+            <button id="button" name="button" class="button">Comment</button>
+          </form>
         </div>
-        <form id="form" class="form__fields">
-          <label for="name" class="form__field">Name</label>
-          <input
-            type="text"
-            id="formName"
-            class="form__name"
-            name="name"
-            placeholder="Enter your name"
-          />
-          <label for="comment" class="form__field">Comment</label>
-          <input
-            type="text"
-            id="formComment"
-            class="form__comment"
-            name="comment-text"
-            placeholder="Add a new comment"
-          />
-          <button id="button" name="button" class="button">Comment</button>
-        </form>
-          <div id="commentSection" class="comment__section"></div>
-          <!-- will be built out in javascript -->
+        <div id="commentSection" class="comment__section"></div>
+        <!-- will be built out in javascript -->
       </section>
     </main>
     <footer class="footer">

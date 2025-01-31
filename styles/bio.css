@@ -513,4 +513,114 @@ a {
     width: 30%;
     padding: 0 0 0.5rem;
   }
+}
+
+.form {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #323232;
+  padding: 16px;
+}
+@media (min-width: 48rem) {
+  .form {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+.form__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  padding-bottom: 16px;
+}
+@media (min-width: 48rem) {
+  .form__title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+@media (min-width: 48rem) {
+  .form__title {
+    padding: 48px 36px 36px;
+  }
+}
+@media (min-width: 80rem) {
+  .form__title {
+    padding: 3rem 5rem 2.25rem;
+  }
+}
+.form__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.form__image, .form .comment__image {
+  border-radius: 50%;
+  height: 36px;
+  aspect-ratio: 1;
+  background-size: cover;
+}
+@media (min-width: 48rem) {
+  .form__image, .form .comment__image {
+    height: 48px;
+    width: 48px;
+  }
+}
+.form__image {
+  margin-top: 16px;
+}
+.form__fields {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.form__field {
+  text-transform: uppercase;
+  color: #afafaf;
+}
+.form__name, .form__comment {
+  border-style: none;
+  border: 1px solid #e1e1e1;
+  background-color: #fafafa;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+.form__name::-moz-placeholder, .form__comment::-moz-placeholder {
+  color: #323232;
+}
+.form__name::placeholder, .form__comment::placeholder {
+  color: #323232;
+}
+.form__name {
+  height: 36px;
+}
+.form__comment {
+  resize: none;
+  height: 80px;
+}
+
+.comment {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: #323232;
+}
+@media (min-width: 48rem) {
+  .comment {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+.comment__image {
+  background-color: #e1e1e1;
+}
+.comment__avatar {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.comment__item {
+  display: flex;
+  justify-content: space-between;
 }/*# sourceMappingURL=bio.css.map */

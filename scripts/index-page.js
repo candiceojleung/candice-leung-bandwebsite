@@ -36,11 +36,11 @@ function displayComments(){
     commentSect.append(commentImage); 
 
     let commentContainer=document.createElement("div"); 
-    commentContainer.classList.add("comment__item"); 
-    commentSect. append(commentContainer); 
+    commentContainer.classList.add("comment__container"); 
+    commentSect.append(commentContainer); 
 
     let commentItem=document.createElement("div");
-    commentContainer.classList.add("comment__container"); 
+    commentItem.classList.add("comment__item"); 
     commentContainer.append(commentItem); 
 
     let nameEl=document.createElement("p"); 
@@ -61,6 +61,7 @@ function displayComments(){
 }
 
 displayComments(); 
+
 
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();

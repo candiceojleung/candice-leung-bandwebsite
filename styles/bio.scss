@@ -150,78 +150,92 @@
   }
 }
 
-// .form{
-//   color:$primary-black; 
-//   @include body-copy; 
-//   padding:16px;
+.form {
+  @include body-copy;
+  color: $primary-black;
+  padding: 16px;
 
-//   &__title{
-//     @include section-head;
-//     padding-bottom:16px;
+  &__title {
+    @include section-head;
+    padding-bottom: 16px;
+    @include tablet {
+      padding: 48px 36px 36px;
+    }
+
+    @include desktop {
+      padding: 3rem 5rem 2.25rem;
+    }
+  }
+
+  &__container{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+  }
+
+  &__image, .comment__image{
+    border-radius:50%;
+    height:36px;
+    aspect-ratio:1;
+    background-size: cover;
+
+    @include tablet{
+      height:48px;
+      width:48px;
+    }
+  }
+  &__image{
+    margin-top:16px;
+  }
+  &__fields{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+  }
+
+  &__field{
+    text-transform:uppercase;
+    color:$primary-silver;
+  }
+
+  &__name, &__comment{
+    border-style:none;
+    border: 1px solid $secondary-grey;
+    background-color: $secondary-white;
+    border-radius:2px;
+    margin-bottom: 16px;
+
+    &::placeholder{
+      color:$primary-black;
+    }
+  }
+  &__name{
+    height: 36px;
+  }
+
+  &__comment{
+    resize:none;
+    height: 80px;
 
 
-//     @include tablet{
-//       padding:48px 36px 36px;
-//     }
-    
-//     @include desktop{
-//       padding:3rem 5rem 2.25rem;
-//     }
-//   }
+  }
+}
 
-//   &__text{
-//     display:flex;
-//   }
+.comment{
+  @include body-copy;
+  color:$primary-black;
+  &__image{
+    background-color:$secondary-grey;
+  }
 
-//   &__join{
-//     display:flex;
+  &__avatar{
+    display:flex; 
+    gap: 16px;
+    margin-bottom:16px;
+  }
 
-//   }
-//   &__content{
-//     display:flex;
-//     flex:1;
-//   }
-
-//   &__image, .comment__avatar{
-//     border-radius:50%;
-//     height:36px;
-//     aspect-ratio:1;
-//     background-size: cover;
-//     background-position:contain;
-
-//     @include tablet{
-//       height:48px; 
-//       width:48px; 
-//     }
-//   }
-
-//   &__item{
-//     display:flex;
-//     flex-direction: column;
-//   }
-
-//   &__field{
-//     color: $primary-silver;
-//     text-transform: uppercase;
-//   }
-
-//   &__text{
-//     height:36px;
-//     width: 240px;
-//     margin-bottom:16px;
-//   }
-//   &__paragraph{
-//     height:90px;
-//     margin-bottom:16px;  
-  
-//   }
-// }
-
-// .comment{
-//   @include body-copy;
-//   color:$primary-black; 
-
-//   &__avatar{
-//     background-color:$secondary-grey;
-//   }
-// }
+  &__item{
+    display:flex;
+    justify-content:space-between;
+  }
+}
