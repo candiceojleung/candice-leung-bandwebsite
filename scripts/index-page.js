@@ -25,9 +25,10 @@ const commentsEl = document.getElementById("commentSection");
 function displayComments() {
   for (let i = 0; i < comments.length; i++) {
     const comment = comments[i];
+    console.log(comment);
 
     const commentSect = document.createElement("div");
-    commentSect.classList.add("comment__avatar");
+    commentSect.classList.add("comment__row");
     commentsEl.prepend(commentSect);
 
     const commentImage = document.createElement("div");
@@ -49,7 +50,7 @@ function displayComments() {
 
     const dateEl = document.createElement("p");
     dateEl.classList.add("comment__date");
-    dateEl.textContent = comment.date;
+    dateEl.textContent = comment.date.toLocaleDateString();
     commentItem.append(dateEl);
 
     const commentEl = document.createElement("p");
@@ -64,18 +65,17 @@ displayComments();
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const date = new Date();
-  const dateOnly = date.toLocaleDateString();
-
   const newComment = {
     name: e.target.formName.value,
-    comment: e.target.formComment.value,
-    date: dateOnly,
+    date: new Date(),
+    comment: e.target.formComment.value
+    
   };
 
   comments.push(newComment);
-  commentsEl.innerHTML = "";
+  commentsEl.replaceChildren();
   displayComments();
 
   formEl.reset();
 });
+

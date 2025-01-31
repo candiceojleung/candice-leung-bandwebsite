@@ -617,10 +617,13 @@ a {
 .comment__image {
   background-color: #e1e1e1;
 }
-.comment__avatar {
+.comment__row {
   display: flex;
   gap: 16px;
   margin-bottom: 16px;
+}
+.comment__container {
+  flex: 1;
 }
 .comment__item {
   display: flex;

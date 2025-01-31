@@ -228,11 +228,16 @@
     background-color: $secondary-grey;
   }
 
-  &__avatar {
+  &__row {
     display: flex;
     gap: 16px;
     margin-bottom: 16px;
   }
+
+  &__container{
+    flex:1;
+  }
+
 
   &__item {
     display: flex;
