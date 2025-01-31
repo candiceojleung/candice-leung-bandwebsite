@@ -27,33 +27,33 @@ function displayComments(){
   for (let i=0; i<comments.length;i++){
     const comment =comments[i]; 
 
-    let commentSect =document.createElement("div");
+    const commentSect =document.createElement("div");
     commentSect.classList.add("comment__avatar");
     commentsEl.prepend(commentSect); 
 
-    let commentImage=document.createElement("div");
+    const commentImage=document.createElement("div");
     commentImage.classList.add("comment__image");
     commentSect.append(commentImage); 
 
-    let commentContainer=document.createElement("div"); 
+    const commentContainer=document.createElement("div"); 
     commentContainer.classList.add("comment__container"); 
     commentSect.append(commentContainer); 
 
-    let commentItem=document.createElement("div");
+    const commentItem=document.createElement("div");
     commentItem.classList.add("comment__item"); 
     commentContainer.append(commentItem); 
 
-    let nameEl=document.createElement("p"); 
+    const nameEl=document.createElement("p"); 
     nameEl.classList.add("comment__name"); 
     nameEl.textContent= comment.name; 
     commentItem.append(nameEl); 
 
-    let dateEl=document.createElement("p");
+    const dateEl=document.createElement("p");
     dateEl.classList.add("comment__date"); 
     dateEl.textContent=comment.date; 
     commentItem.append(dateEl); 
 
-    let commentEl=document.createElement("p");
+    const commentEl=document.createElement("p");
     commentEl.classList.add("comment__comment");
     commentEl.textContent =comment.comment;
     commentContainer.append(commentEl);
@@ -69,7 +69,7 @@ formEl.addEventListener("submit", (e) => {
 const date = new Date();
 const dateOnly = date.toLocaleDateString();
 
-  let newComment = {
+  const newComment = {
     name: e.target.formName.value,
     comment: e.target.formComment.value,
     date: dateOnly,
