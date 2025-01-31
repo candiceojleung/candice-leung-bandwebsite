@@ -167,75 +167,75 @@
     }
   }
 
-  &__container{
-    display:flex;
-    justify-content:space-between;
-    gap:16px;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
   }
 
-  &__image, .comment__image{
-    border-radius:50%;
-    height:36px;
-    aspect-ratio:1;
+  &__image,
+  .comment__image {
+    border-radius: 50%;
+    height: 36px;
+    aspect-ratio: 1;
     background-size: cover;
 
-    @include tablet{
-      height:48px;
-      width:48px;
+    @include tablet {
+      height: 48px;
+      width: 48px;
     }
   }
-  &__image{
-    margin-top:16px;
+  &__image {
+    margin-top: 16px;
   }
-  &__fields{
-    display:flex;
-    flex-direction:column;
-    flex:1;
-  }
-
-  &__field{
-    text-transform:uppercase;
-    color:$primary-silver;
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 
-  &__name, &__comment{
-    border-style:none;
+  &__field {
+    text-transform: uppercase;
+    color: $primary-silver;
+  }
+
+  &__name,
+  &__comment {
+    border-style: none;
     border: 1px solid $secondary-grey;
     background-color: $secondary-white;
-    border-radius:2px;
+    border-radius: 2px;
     margin-bottom: 16px;
 
-    &::placeholder{
-      color:$primary-black;
+    &::placeholder {
+      color: $primary-black;
     }
   }
-  &__name{
+  &__name {
     height: 36px;
   }
 
-  &__comment{
-    resize:none;
+  &__comment {
+    resize: none;
     height: 80px;
-
-
   }
 }
 
-.comment{
+.comment {
   @include body-copy;
-  color:$primary-black;
-  &__image{
-    background-color:$secondary-grey;
+  color: $primary-black;
+  &__image {
+    background-color: $secondary-grey;
   }
 
-  &__avatar{
-    display:flex; 
+  &__avatar {
+    display: flex;
     gap: 16px;
-    margin-bottom:16px;
+    margin-bottom: 16px;
   }
 
-  &__item{
-    display:flex;
-    justify-content:space-between;
+  &__item {
+    display: flex;
+    justify-content: space-between;
   }
 }

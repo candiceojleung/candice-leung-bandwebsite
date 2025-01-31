@@ -98,8 +98,8 @@ a {
     @include section-head;
     padding: 1.5rem 1rem;
 
-    @include tablet{
-      padding:1.5rem 0rem;
+    @include tablet {
+      padding: 1.5rem 0rem;
     }
   }
 
@@ -182,8 +182,8 @@ a {
   &__agent {
     padding-left: 1rem;
 
-    @include tablet{
-      padding-left:0rem;
+    @include tablet {
+      padding-left: 0rem;
     }
   }
 
@@ -199,8 +199,8 @@ a {
   &__email {
     padding-left: 1rem;
 
-    @include tablet{
-      padding-left:0;
+    @include tablet {
+      padding-left: 0;
     }
   }
 }

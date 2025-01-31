@@ -555,14 +555,16 @@ a {
   justify-content: space-between;
   gap: 16px;
 }
-.form__image, .form .comment__image {
+.form__image,
+.form .comment__image {
   border-radius: 50%;
   height: 36px;
   aspect-ratio: 1;
   background-size: cover;
 }
 @media (min-width: 48rem) {
-  .form__image, .form .comment__image {
+  .form__image,
+  .form .comment__image {
     height: 48px;
     width: 48px;
   }

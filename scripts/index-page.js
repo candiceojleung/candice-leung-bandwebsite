@@ -20,54 +20,52 @@ const comments = [
 ];
 
 const formEl = document.getElementById("form");
-const commentsEl= document.getElementById("commentSection"); 
+const commentsEl = document.getElementById("commentSection");
 
+function displayComments() {
+  for (let i = 0; i < comments.length; i++) {
+    const comment = comments[i];
 
-function displayComments(){
-  for (let i=0; i<comments.length;i++){
-    const comment =comments[i]; 
-
-    const commentSect =document.createElement("div");
+    const commentSect = document.createElement("div");
     commentSect.classList.add("comment__avatar");
-    commentsEl.prepend(commentSect); 
+    commentsEl.prepend(commentSect);
 
-    const commentImage=document.createElement("div");
+    const commentImage = document.createElement("div");
     commentImage.classList.add("comment__image");
-    commentSect.append(commentImage); 
+    commentSect.append(commentImage);
 
-    const commentContainer=document.createElement("div"); 
-    commentContainer.classList.add("comment__container"); 
-    commentSect.append(commentContainer); 
+    const commentContainer = document.createElement("div");
+    commentContainer.classList.add("comment__container");
+    commentSect.append(commentContainer);
 
-    const commentItem=document.createElement("div");
-    commentItem.classList.add("comment__item"); 
-    commentContainer.append(commentItem); 
+    const commentItem = document.createElement("div");
+    commentItem.classList.add("comment__item");
+    commentContainer.append(commentItem);
 
-    const nameEl=document.createElement("p"); 
-    nameEl.classList.add("comment__name"); 
-    nameEl.textContent= comment.name; 
-    commentItem.append(nameEl); 
+    const nameEl = document.createElement("p");
+    nameEl.classList.add("comment__name");
+    nameEl.textContent = comment.name;
+    commentItem.append(nameEl);
 
-    const dateEl=document.createElement("p");
-    dateEl.classList.add("comment__date"); 
-    dateEl.textContent=comment.date; 
-    commentItem.append(dateEl); 
+    const dateEl = document.createElement("p");
+    dateEl.classList.add("comment__date");
+    dateEl.textContent = comment.date;
+    commentItem.append(dateEl);
 
-    const commentEl=document.createElement("p");
+    const commentEl = document.createElement("p");
     commentEl.classList.add("comment__comment");
-    commentEl.textContent =comment.comment;
+    commentEl.textContent = comment.comment;
     commentContainer.append(commentEl);
   }
 }
 
-displayComments(); 
-
+displayComments();
 
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
 
-const date = new Date();
-const dateOnly = date.toLocaleDateString();
+  const date = new Date();
+  const dateOnly = date.toLocaleDateString();
 
   const newComment = {
     name: e.target.formName.value,
@@ -78,6 +76,6 @@ const dateOnly = date.toLocaleDateString();
   comments.push(newComment);
   commentsEl.innerHTML = "";
   displayComments();
- 
+
   formEl.reset();
 });
