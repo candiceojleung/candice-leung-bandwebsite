@@ -550,6 +550,9 @@ a {
     padding: 3rem 5rem 2.25rem;
   }
 }
+.form__text {
+  display: flex;
+}
 .form__join {
   display: flex;
 }

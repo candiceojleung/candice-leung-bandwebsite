@@ -311,9 +311,6 @@ a {
   background-repeat: no-repeat;
   min-height: 80vw;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .hero__sub {
   font-size: 0.875rem;
@@ -330,12 +327,12 @@ a {
 }
 @media (min-width: 48rem) {
   .hero__sub {
-    padding: 2.25rem;
+    padding: 2.25rem 2.25rem 0;
   }
 }
 @media (min-width: 80rem) {
   .hero__sub {
-    padding: 2.25rem 5rem;
+    padding: 0 5rem;
   }
 }
 .hero__title {
@@ -360,14 +357,59 @@ a {
 }
 @media (min-width: 80rem) {
   .hero__title {
-    padding-left: 5rem;
+    padding: 36px 0 0 5rem;
+  }
+}
+@media (min-width: 80rem) {
+  .hero__titles {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80vw;
+}
+@media (min-width: 80rem) {
+  .hero__content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+@media (min-width: 48rem) {
+  .hero__song {
+    width: 60%;
+  }
+}
+@media (min-width: 80rem) {
+  .hero__song {
+    flex: 1;
   }
 }
 
 iframe {
   width: 100%;
+  height: 160px;
+  padding: 16px;
   border: none;
   border-radius: 2px;
+}
+@media (min-width: 48rem) {
+  iframe {
+    padding: 0 0 0 36px;
+    height: 150px;
+  }
+}
+@media (min-width: 80rem) {
+  iframe {
+    padding-right: 80px;
+  }
 }
 
 .show {
