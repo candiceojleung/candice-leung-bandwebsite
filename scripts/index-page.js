@@ -50,7 +50,7 @@ function displayComments() {
 
     const dateEl = document.createElement("p");
     dateEl.classList.add("comment__date");
-    dateEl.textContent = comment.date.toLocaleDateString();
+    dateEl.textContent = formatDate(comment.date);
     commentItem.append(dateEl);
 
     const commentEl = document.createElement("p");
@@ -62,14 +62,38 @@ function displayComments() {
 
 displayComments();
 
+const d1 = new Date(); 
+const date = formatDate(d1); 
+
+function formatDate(d1){
+  const current = new Date(); 
+  const msDiff= current.getTime()-d1.getTime();  
+  const secDiff= msDiff/1000;
+  const minsDiff= secDiff/60; 
+  const hoursDiff=minsDiff/60;
+  const daysDiff=hoursDiff/24; 
+  
+  if (secDiff < 60) {
+    return `${Math.floor(secDiff)} seconds ago`;
+  } else if (minsDiff < 60) {
+    return `${Math.floor(minsDiff)} minutes ago`;
+  } else if (hoursDiff < 24) {
+    return `${Math.floor(hoursDiff)} hours ago`;
+  } else if (daysDiff < 30) {
+    return `${Math.floor(daysDiff)} days ago`;
+  } else  {
+    return `${Math.floor(daysDiff / 30)} months ago`;
+  }
+};
+
+
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const newComment = {
     name: e.target.formName.value,
-    date: new Date(),
-    comment: e.target.formComment.value
-    
+    date:new Date(),
+    comment: e.target.formComment.value,
   };
 
   comments.push(newComment);
@@ -78,4 +102,3 @@ formEl.addEventListener("submit", (e) => {
 
   formEl.reset();
 });
-
