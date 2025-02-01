@@ -155,8 +155,8 @@
   color: $primary-black;
   padding: 16px;
 
-  @include tablet{
-    padding:0px; 
+  @include tablet {
+    padding: 0px;
   }
 
   &__title {
@@ -172,18 +172,17 @@
   }
 
   &__container {
-    display: flex;
-    justify-content: space-between;
+    @include flex(space-between);
     gap: 16px;
     border-bottom: 1px solid $secondary-grey;
 
-    @include tablet{
-      margin: 0 100px; 
+    @include tablet {
+      margin: 0 100px;
       padding-bottom: 24px;
     }
 
-    @include desktop{
-      margin: 0 350px; 
+    @include desktop {
+      margin: 0 350px;
     }
   }
 
@@ -196,15 +195,14 @@
 
     @include tablet {
       height: 48px;
-aspect-ratio:1; 
+      aspect-ratio: 1;
     }
   }
   &__image {
     margin-top: 16px;
   }
   &__fields {
-    display: flex;
-    flex-direction: column;
+    @include flex (flex-start, stretch, column);
     flex: 1;
   }
 
@@ -212,7 +210,7 @@ aspect-ratio:1;
     @include labelbutton;
     text-transform: uppercase;
     color: $primary-silver;
-    margin-bottom:4px;
+    margin-bottom: 4px;
   }
 
   &__name,
@@ -222,14 +220,13 @@ aspect-ratio:1;
     background-color: $secondary-white;
     border-radius: 4px;
     margin-bottom: 16px;
-    padding:12px;
+    padding: 12px;
 
-    @include tablet{
-      padding:16px; 
-
+    @include tablet {
+      padding: 16px;
     }
 
-    &:active{
+    &:active {
       border: 1px solid $primary-black;
     }
 
@@ -240,8 +237,8 @@ aspect-ratio:1;
   &__name {
     height: 36px;
 
-    @include tablet{
-      height: 48px; 
+    @include tablet {
+      height: 48px;
     }
   }
 
@@ -250,19 +247,17 @@ aspect-ratio:1;
     height: 80px;
   }
 
-  &__button{
-
-    @include tablet{    
-      display:flex;
-      justify-content:flex-end;}
-
+  &__button {
+    @include tablet {
+      @include flex (flex-end);
+    }
   }
 }
 
 .comment {
   @include body-copy;
   color: $primary-black;
-  margin-bottom: 16px; 
+  margin-bottom: 16px;
 
   &__image {
     background-color: $secondary-grey;
@@ -274,35 +269,34 @@ aspect-ratio:1;
     border-bottom: 1px solid $secondary-grey;
     padding: 16px 0;
 
-    @include tablet{
-      margin: 0 100px; 
+    @include tablet {
+      margin: 0 100px;
     }
 
-    @include desktop{
+    @include desktop {
       margin: 0 350px;
       padding-bottom: 36px;
     }
   }
 
-  &__container{
-    flex:1;
+  &__container {
+    flex: 1;
   }
 
   &__item {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 4px; 
+    @include flex(space-between); 
+    padding-bottom: 4px;
   }
 
-  &__name{
-    font-weight:700; 
+  &__name {
+    font-weight: 700;
   }
 
-  &__date{
-    color:$primary-silver;
+  &__date {
+    color: $primary-silver;
   }
 }
 
 .error {
-  border: 1px solid #D22D2D;
+  border: 1px solid #d22d2d;
 }

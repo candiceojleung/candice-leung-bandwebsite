@@ -15,25 +15,18 @@
   width: 100%;
 
   &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flex (center, stretch, column); 
     min-height: 80vw;
 
     @include desktop {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-around;
+      @include flex (space-around,center, row);
     }
   }
 
   &__titles {
     @include desktop {
+      @include flex(center, flex-start, column);
       width: 60%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
     }
   }
 
@@ -125,8 +118,7 @@ iframe {
       display:none; 
   
       @include tablet{
-        display:flex; 
-        justify-content:space-between;
+        @include flex (space-between);
         width: 64%; 
         padding: 24px 36px;
       }
@@ -183,9 +175,7 @@ iframe {
     }
 
     @include tablet {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
+      @include flex(flex-start,center);
       padding: 24px 18px;
       border-bottom: 1px solid $secondary-grey;
     }

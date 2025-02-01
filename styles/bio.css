@@ -559,6 +559,8 @@ a {
 .form__container {
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
+  flex-direction: row;
   gap: 16px;
   border-bottom: 1px solid #e1e1e1;
 }
@@ -592,6 +594,8 @@ a {
 }
 .form__fields {
   display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
   flex-direction: column;
   flex: 1;
 }
@@ -647,6 +651,8 @@ a {
   .form__button {
     display: flex;
     justify-content: flex-end;
+    align-items: stretch;
+    flex-direction: row;
   }
 }
 
@@ -689,6 +695,8 @@ a {
 .comment__item {
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
+  flex-direction: row;
   padding-bottom: 4px;
 }
 .comment__name {
@@ -699,5 +707,5 @@ a {
 }
 
 .error {
-  border: 1px solid #D22D2D;
+  border: 1px solid #d22d2d;
 }/*# sourceMappingURL=bio.css.map */
