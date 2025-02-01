@@ -271,9 +271,10 @@ a {
 }
 
 .button {
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  font-size: 13px;
   height: 40px;
   width: 100%;
   margin-bottom: 16px;
@@ -289,8 +290,8 @@ a {
 }
 @media (min-width: 48rem) {
   .button {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
   }
 }
 @media (min-width: 48rem) {
@@ -424,14 +425,9 @@ iframe {
     line-height: 1.375rem;
   }
 }
-@media (min-width: 48rem) {
-  .show__headers {
-    padding: 36px 36px 0;
-  }
-}
 @media (min-width: 80rem) {
-  .show__headers {
-    padding: 36px 80px;
+  .show {
+    display: flex;
   }
 }
 .show__title {
@@ -448,34 +444,56 @@ iframe {
 }
 @media (min-width: 48rem) {
   .show__title {
-    padding: 0 0 36px;
+    padding: 36px;
   }
 }
 @media (min-width: 80rem) {
   .show__title {
-    width: 50%;
+    padding: 36px 80px;
+  }
+}
+@media (min-width: 80rem) {
+  .show__container {
+    flex-direction: column;
+    flex: 1;
+  }
+}
+.show__subheaders {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: #afafaf;
+  text-transform: uppercase;
+  display: none;
+}
+@media (min-width: 48rem) {
+  .show__subheaders {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
   }
 }
 @media (min-width: 48rem) {
   .show__subheaders {
     display: flex;
     justify-content: space-between;
-    text-align: flex-start;
+    width: 64%;
+    padding: 24px 36px;
   }
 }
-@media (min-width: 48rem) {
-  .show__placeholder {
-    width: 19%;
+@media (min-width: 80rem) {
+  .show__subheaders {
+    margin: 36px 36px 0;
+    width: 75%;
   }
 }
-.show__date, .show__venue, .show__location {
-  display: none;
+@media (min-width: 80rem) {
+  .show__date {
+    flex: 2;
+  }
 }
-@media (min-width: 48rem) {
-  .show__date, .show__venue, .show__location {
-    display: flex;
-    text-transform: uppercase;
-    color: #afafaf;
+@media (min-width: 80rem) {
+  .show__heading {
+    flex: 1;
   }
 }
 @media (min-width: 48rem) {
@@ -486,6 +504,24 @@ iframe {
 @media (min-width: 48rem) and (min-width: 80rem) {
   .show__list {
     margin: 0 80px 36px 62px;
+  }
+}
+.show__header {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #afafaf;
+}
+@media (min-width: 48rem) {
+  .show__header {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
+}
+@media (min-width: 48rem) {
+  .show__header {
+    display: none;
   }
 }
 .show__item {
@@ -505,15 +541,6 @@ iframe {
     align-items: center;
     padding: 24px 18px;
     border-bottom: 1px solid #e1e1e1;
-  }
-}
-.show__header {
-  color: #afafaf;
-  text-transform: uppercase;
-}
-@media (min-width: 48rem) {
-  .show__header {
-    display: none;
   }
 }
 .show__info {

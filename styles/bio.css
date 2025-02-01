@@ -271,9 +271,10 @@ a {
 }
 
 .button {
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  font-size: 13px;
   height: 40px;
   width: 100%;
   margin-bottom: 16px;
@@ -289,8 +290,8 @@ a {
 }
 @media (min-width: 48rem) {
   .button {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
   }
 }
 @media (min-width: 48rem) {
@@ -595,9 +596,18 @@ a {
   flex: 1;
 }
 .form__field {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
   text-transform: uppercase;
   color: #afafaf;
   margin-bottom: 4px;
+}
+@media (min-width: 48rem) {
+  .form__field {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
 }
 .form__name, .form__comment {
   border-style: none;

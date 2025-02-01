@@ -209,6 +209,7 @@ aspect-ratio:1;
   }
 
   &__field {
+    @include labelbutton;
     text-transform: uppercase;
     color: $primary-silver;
     margin-bottom:4px;

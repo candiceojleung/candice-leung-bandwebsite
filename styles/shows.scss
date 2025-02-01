@@ -94,14 +94,8 @@ iframe {
   color: $primary-black;
   @include body-copy;
 
-
-  &__headers {
-    @include tablet {
-      padding: 36px 36px 0;
-    }
-    @include desktop{
-      padding: 36px 80px;
-    }
+  @include desktop{
+    display:flex;  
   }
 
   &__title {
@@ -109,37 +103,51 @@ iframe {
     padding: 16px;
 
     @include tablet {
-      padding: 0 0 36px;
+      padding:36px;
+    }
+
+    @include desktop{
+      padding: 36px 80px;
     }
     }
-  }
 
-  &__subheaders {
-    @include tablet {
-      display: flex;
-      justify-content: space-between;
-      text-align: flex-start;
+    &__container{
+      @include desktop{
+        flex-direction:column; 
+        flex:1; 
+      }
     }
-  }
-
-  &__placeholder {
-    @include tablet {
-      width: 19%;
-    }
-  }
-
-  &__date,
-  &__venue,
-  &__location {
-    display: none;
-
-    @include tablet {
-      display: flex;
-      text-transform: uppercase;
+  
+    &__subheaders {
+      @include labelbutton;
       color: $primary-silver;
-    }
-  }
+      text-transform: uppercase;
+      display:none; 
+  
+      @include tablet{
+        display:flex; 
+        justify-content:space-between;
+        width: 64%; 
+        padding: 24px 36px;
+      }
 
+      @include desktop{
+        margin: 36px 36px 0;
+        width: 75%;
+      }
+    }
+
+    &__date{
+      @include desktop{
+        flex:2; 
+      }
+    }
+
+    &__heading{
+      @include desktop{
+        flex:1;
+      }
+    }
   &__list {
     @include tablet {
       margin: 0 36px 36px 18px;
@@ -149,6 +157,17 @@ iframe {
       }
     }
   }
+
+  &__header{
+    @include labelbutton;
+    text-transform:uppercase; 
+    color:$primary-silver;
+
+    @include tablet{
+      display:none; 
+    }
+  }
+
 
   &__item {
     padding: 16px;
@@ -171,14 +190,7 @@ iframe {
     }
   }
 
-  &__header {
-    color: $primary-silver;
-    text-transform: uppercase;
 
-    @include tablet {
-      display: none;
-    }
-  }
 
   &__info {
     padding-bottom: 16px;
@@ -202,3 +214,4 @@ iframe {
       }
     }
   }
+}

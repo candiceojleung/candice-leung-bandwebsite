@@ -206,7 +206,8 @@ a {
 }
 
 .button {
-  @include body-copy;
+  @include labelbutton;
+  font-size:13px;
   height: 40px;
   width: 100%;
   margin-bottom: 16px;
