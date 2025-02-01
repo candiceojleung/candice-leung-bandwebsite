@@ -85,7 +85,7 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  height: 2.25rem;
+  height: 3rem;
   width: 50%;
 }
 .navbar__link--underlined {
