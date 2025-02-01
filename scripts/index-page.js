@@ -43,7 +43,7 @@ function displayComments() {
     const nameEl = createP("comment__name", comment.name);
     commentItem.append(nameEl);
 
-    const dateEl = createP("comment__date", comment.date);
+    const dateEl = createP("comment__date", formatDate(comment.date));
     commentItem.append(dateEl);
 
     const commentEl = createP("comment__text", comment.comment);

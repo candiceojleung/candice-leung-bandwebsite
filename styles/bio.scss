@@ -162,6 +162,7 @@
   &__title {
     @include section-head;
     padding-bottom: 1rem;
+
     @include tablet {
       padding: 3rem 2.25rem 2.25rem;
     }
@@ -198,9 +199,11 @@
       aspect-ratio: 1;
     }
   }
+
   &__image {
     margin-top: 1rem;
   }
+  
   &__fields {
     @include flex (flex-start, stretch, column);
     flex: 1;
