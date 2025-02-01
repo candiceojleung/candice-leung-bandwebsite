@@ -183,7 +183,7 @@
     }
 
     @include desktop {
-      margin: 21.875rem;
+      margin:0 21.875rem;
     }
   }
 
@@ -203,7 +203,7 @@
   &__image {
     margin-top: 1rem;
   }
-  
+
   &__fields {
     @include flex (flex-start, stretch, column);
     flex: 1;

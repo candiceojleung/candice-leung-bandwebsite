@@ -572,7 +572,7 @@ a {
 }
 @media (min-width: 80rem) {
   .form__container {
-    margin: 21.875rem;
+    margin: 0 21.875rem;
   }
 }
 .form__image,

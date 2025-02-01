@@ -493,7 +493,7 @@ iframe {
 }
 @media (min-width: 80rem) {
   .show__date {
-    flex: 2;
+    flex: 1;
   }
 }
 @media (min-width: 80rem) {
