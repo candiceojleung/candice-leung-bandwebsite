@@ -105,8 +105,8 @@ a {
 }
 @media (min-width: 80rem) {
   .navbar__link {
-    margin: 56px 0.625rem 0 2.5rem;
-    padding-bottom: 56px;
+    margin: 3.5rem 0.625rem 0 2.5rem;
+    padding-bottom: 3.5rem;
   }
 }
 .navbar__link--hover {
@@ -274,12 +274,12 @@ a {
   font-size: 0.625rem;
   line-height: 1.25rem;
   font-weight: 700;
-  font-size: 13px;
-  height: 40px;
+  font-size: 0.8125rem;
+  height: 2.5rem;
   width: 100%;
-  margin-bottom: 16px;
-  padding: 0 32px;
-  border-radius: 4px;
+  margin-bottom: 1rem;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
   background-color: #323232;
   color: #ffffff;
   display: flex;
@@ -296,7 +296,7 @@ a {
 }
 @media (min-width: 48rem) {
   .button {
-    width: 150px;
+    width: 9.375rem;
     margin: 0;
     padding: 0;
   }

@@ -49,10 +49,10 @@
     width: 90%;
 
     @include tablet {
-      padding: 36px;
+      padding: 2.25rem;
     }
     @include desktop {
-      padding: 36px 0 0 5rem;
+      padding: 2.25rem 0 0 5rem;
     }
   }
 
@@ -68,18 +68,18 @@
 
 iframe {
   width: 100%;
-  height: 160px;
-  padding: 16px;
+  height: 10rem;
+  padding: 1rem;
   border: none;
-  border-radius: 2px;
+  border-radius: 0.125rem;
 
   @include tablet {
-    padding: 0 0 0 36px;
-    height: 150px;
+    padding: 0 0 0 2.25rem;
+    height: 9.375rem;
   }
 
   @include desktop {
-    padding-right: 80px;
+    padding-right: 5rem;
   }
 }
 
@@ -93,14 +93,14 @@ iframe {
 
   &__title {
     @include section-head;
-    padding: 16px;
+    padding: 1rem;
 
     @include tablet {
-      padding:36px;
+      padding:2.25rem;
     }
 
     @include desktop{
-      padding: 36px 80px;
+      padding: 2.25rem 5rem;
     }
     }
 
@@ -120,12 +120,12 @@ iframe {
       @include tablet{
         @include flex (space-between);
         width: 64%; 
-        padding: 24px 36px;
+        padding: 1.5rem 2.25rem;
       }
 
       @include desktop{
-        margin: 36px 80px 0 62px;
-        padding:24px 18px;
+        margin: 2.25rem 5rem 0 3.875rem;
+        padding:1.5rem 1.125rem;
         width: 71%;
       }
     }
@@ -143,10 +143,10 @@ iframe {
     }
   &__list {
     @include tablet {
-      margin: 0 36px 36px 18px;
+      margin: 0 2.25rem 2.25rem 1.125rem;
 
       @include desktop{
-        margin: 0 80px 36px 62px;
+        margin: 0 5rem 2.25rem 3.875rem;
       }
     }
   }
@@ -163,8 +163,8 @@ iframe {
 
 
   &__item {
-    padding: 16px;
-    border-bottom: 1px solid $secondary-grey;
+    padding: 1rem;
+    border-bottom: 0.0625rem solid $secondary-grey;
 
     &:hover {
       background-color: $secondary-white;
@@ -176,15 +176,15 @@ iframe {
 
     @include tablet {
       @include flex(flex-start,center);
-      padding: 24px 18px;
-      border-bottom: 1px solid $secondary-grey;
+      padding: 1.5rem 1.125rem;
+      border-bottom: 0.0625rem solid $secondary-grey;
     }
   }
 
 
 
   &__info {
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
 
     @include tablet {
       padding: 0;
@@ -193,7 +193,7 @@ iframe {
 
     &--bold {
       font-weight: 700;
-      padding-bottom: 16px;
+      padding-bottom: 1rem;
 
       @include tablet {
         flex: 1;

@@ -69,8 +69,8 @@ a {
     }
 
     @include desktop {
-      margin: 56px 0.625rem 0 2.5rem;
-      padding-bottom: 56px;
+      margin: 3.5rem 0.625rem 0 2.5rem;
+      padding-bottom: 3.5rem;
     }
 
     &--hover {
@@ -207,19 +207,19 @@ a {
 
 .button {
   @include labelbutton;
-  font-size:13px;
-  height: 40px;
+  font-size:0.8125rem;
+  height: 2.5rem;
   width: 100%;
-  margin-bottom: 16px;
-  padding: 0 32px;
-  border-radius: 4px;
+  margin-bottom: 1rem;
+  padding: 0 2rem;
+  border-radius: 0.25rem;
   background-color: $primary-black;
   color: $primary-white;
   @include flex(center, center);
   text-transform: uppercase;
 
   @include tablet {
-    width: 150px;
+    width: 9.375rem;
     margin: 0;
     padding: 0;
   }
