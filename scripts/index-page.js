@@ -27,52 +27,55 @@ function displayComments() {
     const comment = comments[i];
     console.log(comment);
 
-    const commentSect = document.createElement("div");
-    commentSect.classList.add("comment__row");
+    const commentSect = createDiv("comment__row");
     commentsEl.prepend(commentSect);
 
-    const commentImage = document.createElement("div");
-    commentImage.classList.add("comment__image");
+    const commentImage = createDiv("comment__image");
     commentSect.append(commentImage);
 
-    const commentContainer = document.createElement("div");
-    commentContainer.classList.add("comment__container");
+    const commentContainer = createDiv("comment__container");
     commentSect.append(commentContainer);
 
-    const commentItem = document.createElement("div");
-    commentItem.classList.add("comment__item");
+    const commentItem = createDiv("comment__item");
     commentContainer.append(commentItem);
 
-    const nameEl = document.createElement("p");
-    nameEl.classList.add("comment__name");
-    nameEl.textContent = comment.name;
+    const nameEl = createP("comment__name", comment.name);
     commentItem.append(nameEl);
 
-    const dateEl = document.createElement("p");
-    dateEl.classList.add("comment__date");
-    dateEl.textContent = formatDate(comment.date);
+    const dateEl = createP("comment__date", comment.date);
     commentItem.append(dateEl);
 
-    const commentEl = document.createElement("p");
-    commentEl.classList.add("comment__text");
-    commentEl.textContent = comment.comment;
+    const commentEl = createP("comment__text", comment.comment);
     commentContainer.append(commentEl);
   }
 }
 
+function createDiv(className) {
+  const div = document.createElement("div");
+  div.className = className;
+  return div;
+}
+
+function createP(className, text = "") {
+  const p = document.createElement("p");
+  p.className = className;
+  p.textContent = text;
+  return p;
+}
+
 displayComments();
 
-const d1 = new Date(); 
-const date = formatDate(d1); 
+const d1 = new Date();
+const date = formatDate(d1);
 
-function formatDate(d1){
-  const current = new Date(); 
-  const msDiff= current.getTime()-d1.getTime();  
-  const secDiff= msDiff/1000;
-  const minsDiff= secDiff/60; 
-  const hoursDiff=minsDiff/60;
-  const daysDiff=hoursDiff/24; 
-  
+function formatDate(d1) {
+  const current = new Date();
+  const msDiff = current.getTime() - d1.getTime();
+  const secDiff = msDiff / 1000;
+  const minsDiff = secDiff / 60;
+  const hoursDiff = minsDiff / 60;
+  const daysDiff = hoursDiff / 24;
+
   if (secDiff < 60) {
     return `${Math.floor(secDiff)} seconds ago`;
   } else if (minsDiff < 60) {
@@ -81,17 +84,16 @@ function formatDate(d1){
     return `${Math.floor(hoursDiff)} hours ago`;
   } else if (daysDiff < 30) {
     return `${Math.floor(daysDiff)} days ago`;
-  } else  {
+  } else {
     return `${Math.floor(daysDiff / 30)} months ago`;
   }
-};
-
+}
 
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const nameField = document.getElementById('formName');
-  const commentField = document.getElementById('formComment');
+  const nameField = document.getElementById("formName");
+  const commentField = document.getElementById("formComment");
   let emptyField = false;
 
   if (nameField.value.trim() === "") {
@@ -102,39 +104,32 @@ formEl.addEventListener("submit", (e) => {
   if (commentField.value.trim() === "") {
     commentField.classList.add("error");
     emptyField = true;
-}
-if (emptyField) {
+  }
+  if (emptyField) {
+    nameField.addEventListener("input", () => {
+      if (nameField.classList.contains("error")) {
+        nameField.classList.remove("error");
+      }
+    });
 
-  nameField.addEventListener("input", () => {
-    if (nameField.classList.contains("error")) {
-      nameField.classList.remove("error");
-    }
-  });
+    commentField.addEventListener("input", () => {
+      if (commentField.classList.contains("error")) {
+        commentField.classList.remove("error");
+      }
+    });
 
-  commentField.addEventListener("input", () => {
-    if (commentField.classList.contains("error")) {
-      commentField.classList.remove("error");
-    }
-  });
+    return;
+  } else {
+    const newComment = {
+      name: e.target.formName.value,
+      date: new Date(),
+      comment: e.target.formComment.value,
+    };
 
- return; 
-}
+    comments.push(newComment);
+    commentsEl.replaceChildren();
+    displayComments();
 
-else{
-  const newComment = {
-    name: e.target.formName.value,
-    date:new Date(),
-    comment: e.target.formComment.value
-  };
-
-  comments.push(newComment);
-  commentsEl.replaceChildren();
-  displayComments();
-
-  formEl.reset();
-}
-
-
-
+    formEl.reset();
+  }
 });
-

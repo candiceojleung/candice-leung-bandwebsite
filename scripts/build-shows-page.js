@@ -37,42 +37,49 @@ for (const showObj of shows) {
   const show = document.createElement("div");
   show.classList.add("show__item");
 
-  const showDate = document.createElement("div");
-  showDate.classList.add("show__header");
-  showDate.textContent = "Date";
+  const showDate = createDiv("show__header", "Date");
   show.append(showDate);
 
-  const dateInfo = document.createElement("p");
-  dateInfo.classList.add("show__info--bold");
-  dateInfo.textContent = showObj.date;
+  const dateInfo = createP("show__info", showObj.date);
   show.append(dateInfo);
 
-  const showVenue = document.createElement("div");
-  showVenue.classList.add("show__header");
-  showVenue.textContent = "Venue";
+  const showVenue = createDiv("show__header", "Venue");
   show.append(showVenue);
 
-  const venueInfo = document.createElement("p");
-  venueInfo.classList.add("show__info");
-  venueInfo.textContent = showObj.venue;
+  const venueInfo = createP("show__info", showObj.venue);
   show.append(venueInfo);
 
-  const showLocation = document.createElement("div");
-  showLocation.classList.add("show__header");
-  showLocation.textContent = "Location";
+  const showLocation = createDiv("show__header", "Location");
   show.append(showLocation);
 
-  const locationInfo = document.createElement("p");
-  locationInfo.classList.add("show__info");
-  locationInfo.textContent = showObj.location;
+  const locationInfo = createP("show__info", showObj.location);
   show.append(locationInfo);
 
-  const button = document.createElement("button");
-  button.classList.add("button");
-  button.textContent = "buy tickets";
+  const button = createButton("button", "buy tickets");
   show.append(button);
 
   list.append(show);
+}
+
+function createButton(className, text = "") {
+  const button = document.createElement("button");
+  button.className = className;
+  button.textContent = text;
+  return button;
+}
+
+function createDiv(className, text = "") {
+  const div = document.createElement("div");
+  div.className = className;
+  div.textContent = text;
+  return div;
+}
+
+function createP(className, text = "") {
+  const p = document.createElement("p");
+  p.className = className;
+  p.textContent = text;
+  return p;
 }
 
 list.addEventListener("click", (e) => {
