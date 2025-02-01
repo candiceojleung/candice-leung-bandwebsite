@@ -204,8 +204,9 @@
     border-style: none;
     border: 1px solid $secondary-grey;
     background-color: $secondary-white;
-    border-radius: 2px;
+    border-radius: 3px;
     margin-bottom: 16px;
+    padding:8px;
 
     &::placeholder {
       color: $primary-black;
@@ -243,4 +244,8 @@
     display: flex;
     justify-content: space-between;
   }
+}
+
+.error {
+  border: 2px solid red;
 }

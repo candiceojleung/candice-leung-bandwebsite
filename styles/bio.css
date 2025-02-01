@@ -585,8 +585,9 @@ a {
   border-style: none;
   border: 1px solid #e1e1e1;
   background-color: #fafafa;
-  border-radius: 2px;
+  border-radius: 3px;
   margin-bottom: 16px;
+  padding: 8px;
 }
 .form__name::-moz-placeholder, .form__comment::-moz-placeholder {
   color: #323232;
@@ -628,4 +629,8 @@ a {
 .comment__item {
   display: flex;
   justify-content: space-between;
+}
+
+.error {
+  border: 2px solid red;
 }/*# sourceMappingURL=bio.css.map */

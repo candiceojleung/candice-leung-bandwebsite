@@ -54,7 +54,7 @@ function displayComments() {
     commentItem.append(dateEl);
 
     const commentEl = document.createElement("p");
-    commentEl.classList.add("comment__comment");
+    commentEl.classList.add("comment__text");
     commentEl.textContent = comment.comment;
     commentContainer.append(commentEl);
   }
@@ -90,10 +90,41 @@ function formatDate(d1){
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
 
+  const nameField = document.getElementById('formName');
+  const commentField = document.getElementById('formComment');
+  let emptyField = false;
+
+  if (nameField.value.trim() === "") {
+    nameField.classList.add("error");
+    emptyField = true;
+  }
+
+  if (commentField.value.trim() === "") {
+    commentField.classList.add("error");
+    emptyField = true;
+}
+if (emptyField) {
+
+  nameField.addEventListener("input", () => {
+    if (nameField.classList.contains("error")) {
+      nameField.classList.remove("error");
+    }
+  });
+
+  commentField.addEventListener("input", () => {
+    if (commentField.classList.contains("error")) {
+      commentField.classList.remove("error");
+    }
+  });
+
+ return; 
+}
+
+else{
   const newComment = {
     name: e.target.formName.value,
     date:new Date(),
-    comment: e.target.formComment.value,
+    comment: e.target.formComment.value
   };
 
   comments.push(newComment);
@@ -101,4 +132,9 @@ formEl.addEventListener("submit", (e) => {
   displayComments();
 
   formEl.reset();
+}
+
+
+
 });
+
