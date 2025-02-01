@@ -559,6 +559,18 @@ a {
   display: flex;
   justify-content: space-between;
   gap: 16px;
+  border-bottom: 1px solid #e1e1e1;
+}
+@media (min-width: 48rem) {
+  .form__container {
+    margin: 0 100px;
+    padding-bottom: 24px;
+  }
+}
+@media (min-width: 80rem) {
+  .form__container {
+    margin: 0 350px;
+  }
 }
 .form__image,
 .form .comment__image {
@@ -621,12 +633,19 @@ a {
   resize: none;
   height: 80px;
 }
+@media (min-width: 48rem) {
+  .form__button {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
 
 .comment {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   font-weight: 400;
   color: #323232;
+  margin-bottom: 16px;
 }
 @media (min-width: 48rem) {
   .comment {
@@ -640,8 +659,19 @@ a {
 .comment__row {
   display: flex;
   gap: 16px;
-  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
   padding: 16px 0;
+}
+@media (min-width: 48rem) {
+  .comment__row {
+    margin: 0 100px;
+  }
+}
+@media (min-width: 80rem) {
+  .comment__row {
+    margin: 0 350px;
+    padding-bottom: 36px;
+  }
 }
 .comment__container {
   flex: 1;
@@ -649,6 +679,13 @@ a {
 .comment__item {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 4px;
+}
+.comment__name {
+  font-weight: 700;
+}
+.comment__date {
+  color: #afafaf;
 }
 
 .error {

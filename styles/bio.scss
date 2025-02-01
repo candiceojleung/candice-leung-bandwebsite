@@ -175,6 +175,16 @@
     display: flex;
     justify-content: space-between;
     gap: 16px;
+    border-bottom: 1px solid $secondary-grey;
+
+    @include tablet{
+      margin: 0 100px; 
+      padding-bottom: 24px;
+    }
+
+    @include desktop{
+      margin: 0 350px; 
+    }
   }
 
   &__image,
@@ -238,11 +248,21 @@ aspect-ratio:1;
     resize: none;
     height: 80px;
   }
+
+  &__button{
+
+    @include tablet{    
+      display:flex;
+      justify-content:flex-end;}
+
+  }
 }
 
 .comment {
   @include body-copy;
   color: $primary-black;
+  margin-bottom: 16px; 
+
   &__image {
     background-color: $secondary-grey;
   }
@@ -250,8 +270,17 @@ aspect-ratio:1;
   &__row {
     display: flex;
     gap: 16px;
-    border-top: 1px solid $secondary-grey;
-    padding: 16px 0 ;
+    border-bottom: 1px solid $secondary-grey;
+    padding: 16px 0;
+
+    @include tablet{
+      margin: 0 100px; 
+    }
+
+    @include desktop{
+      margin: 0 350px;
+      padding-bottom: 36px;
+    }
   }
 
   &__container{
@@ -261,6 +290,15 @@ aspect-ratio:1;
   &__item {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 4px; 
+  }
+
+  &__name{
+    font-weight:700; 
+  }
+
+  &__date{
+    color:$primary-silver;
   }
 }
 
