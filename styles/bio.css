@@ -528,6 +528,11 @@ a {
     line-height: 1.375rem;
   }
 }
+@media (min-width: 48rem) {
+  .form {
+    padding: 0px;
+  }
+}
 .form__title {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -566,7 +571,7 @@ a {
   .form__image,
   .form .comment__image {
     height: 48px;
-    width: 48px;
+    aspect-ratio: 1;
   }
 }
 .form__image {
@@ -580,14 +585,23 @@ a {
 .form__field {
   text-transform: uppercase;
   color: #afafaf;
+  margin-bottom: 4px;
 }
 .form__name, .form__comment {
   border-style: none;
   border: 1px solid #e1e1e1;
   background-color: #fafafa;
-  border-radius: 3px;
+  border-radius: 4px;
   margin-bottom: 16px;
-  padding: 8px;
+  padding: 12px;
+}
+@media (min-width: 48rem) {
+  .form__name, .form__comment {
+    padding: 16px;
+  }
+}
+.form__name:active, .form__comment:active {
+  border: 1px solid #323232;
 }
 .form__name::-moz-placeholder, .form__comment::-moz-placeholder {
   color: #323232;
@@ -597,6 +611,11 @@ a {
 }
 .form__name {
   height: 36px;
+}
+@media (min-width: 48rem) {
+  .form__name {
+    height: 48px;
+  }
 }
 .form__comment {
   resize: none;
@@ -621,7 +640,8 @@ a {
 .comment__row {
   display: flex;
   gap: 16px;
-  margin-bottom: 16px;
+  border-top: 1px solid #e1e1e1;
+  padding: 16px 0;
 }
 .comment__container {
   flex: 1;
@@ -632,5 +652,5 @@ a {
 }
 
 .error {
-  border: 2px solid red;
+  border: 1px solid #D22D2D;
 }/*# sourceMappingURL=bio.css.map */

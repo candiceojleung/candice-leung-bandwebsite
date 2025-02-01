@@ -14,6 +14,29 @@
   min-height: 80vw;
   width: 100%;
 
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80vw;
+
+    @include desktop {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+
+  &__titles {
+    @include desktop {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+
   &__sub {
     @include subheader;
     color: $primary-white;
@@ -37,29 +60,6 @@
     }
     @include desktop {
       padding: 36px 0 0 5rem;
-    }
-  }
-
-  &__titles {
-    @include desktop {
-      width: 60%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-    }
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 80vw;
-
-    @include desktop {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-around;
     }
   }
 
@@ -94,28 +94,40 @@ iframe {
   color: $primary-black;
   @include body-copy;
 
-  @include tablet {
-    padding: 48px 36px 36px;
+
+  &__headers {
+    @include tablet {
+      padding: 36px 36px 0;
+    }
+    @include desktop{
+      padding: 36px 80px;
+    }
   }
 
   &__title {
     @include section-head;
-    padding: 24px 16px;
+    padding: 16px;
 
     @include tablet {
       padding: 0 0 36px;
     }
-  }
-
-  &__headers {
-    @include tablet {
-      display: flex;
-      justify-content: flex-start;
-      align-items: baseline;
-      text-transform: uppercase;
-      padding-bottom: 24px;
     }
   }
+
+  &__subheaders {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      text-align: flex-start;
+    }
+  }
+
+  &__placeholder {
+    @include tablet {
+      width: 19%;
+    }
+  }
+
   &__date,
   &__venue,
   &__location {
@@ -123,14 +135,18 @@ iframe {
 
     @include tablet {
       display: flex;
+      text-transform: uppercase;
       color: $primary-silver;
-      flex: 1;
     }
   }
 
-  &__date {
-    @include desktop {
-      flex: 2;
+  &__list {
+    @include tablet {
+      margin: 0 36px 36px 18px;
+
+      @include desktop{
+        margin: 0 80px 36px 62px;
+      }
     }
   }
 
@@ -150,8 +166,7 @@ iframe {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      padding: 36px 0;
-      height: 48px;
+      padding: 24px 18px;
       border-bottom: 1px solid $secondary-grey;
     }
   }

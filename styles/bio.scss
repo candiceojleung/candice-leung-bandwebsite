@@ -155,6 +155,10 @@
   color: $primary-black;
   padding: 16px;
 
+  @include tablet{
+    padding:0px; 
+  }
+
   &__title {
     @include section-head;
     padding-bottom: 16px;
@@ -182,7 +186,7 @@
 
     @include tablet {
       height: 48px;
-      width: 48px;
+aspect-ratio:1; 
     }
   }
   &__image {
@@ -197,6 +201,7 @@
   &__field {
     text-transform: uppercase;
     color: $primary-silver;
+    margin-bottom:4px;
   }
 
   &__name,
@@ -204,9 +209,18 @@
     border-style: none;
     border: 1px solid $secondary-grey;
     background-color: $secondary-white;
-    border-radius: 3px;
+    border-radius: 4px;
     margin-bottom: 16px;
-    padding:8px;
+    padding:12px;
+
+    @include tablet{
+      padding:16px; 
+
+    }
+
+    &:active{
+      border: 1px solid $primary-black;
+    }
 
     &::placeholder {
       color: $primary-black;
@@ -214,6 +228,10 @@
   }
   &__name {
     height: 36px;
+
+    @include tablet{
+      height: 48px; 
+    }
   }
 
   &__comment {
@@ -232,13 +250,13 @@
   &__row {
     display: flex;
     gap: 16px;
-    margin-bottom: 16px;
+    border-top: 1px solid $secondary-grey;
+    padding: 16px 0 ;
   }
 
   &__container{
     flex:1;
   }
-
 
   &__item {
     display: flex;
@@ -247,5 +265,5 @@
 }
 
 .error {
-  border: 2px solid red;
+  border: 1px solid #D22D2D;
 }
