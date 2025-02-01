@@ -183,7 +183,7 @@
     }
 
     @include desktop {
-      margin:0 21.875rem;
+      margin: 0 21.875rem;
     }
   }
 
@@ -205,7 +205,7 @@
   }
 
   &__fields {
-    @include flex (flex-start, stretch, column);
+    @include flex(flex-start, stretch, column);
     flex: 1;
   }
 
@@ -229,7 +229,8 @@
       padding: 1rem;
     }
 
-    &:active {
+    &:focus {
+      outline: none;
       border: 0.0625rem solid $primary-black;
     }
 
@@ -252,7 +253,7 @@
 
   &__button {
     @include tablet {
-      @include flex (flex-end);
+      @include flex(flex-end);
     }
   }
 }
@@ -287,7 +288,7 @@
   }
 
   &__item {
-    @include flex(space-between); 
+    @include flex(space-between);
     padding-bottom: 0.25rem;
   }
 
