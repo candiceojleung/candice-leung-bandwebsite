@@ -153,17 +153,17 @@
 .form {
   @include body-copy;
   color: $primary-black;
-  padding: 16px;
+  padding: 1rem;
 
   @include tablet {
-    padding: 0px;
+    padding: 0;
   }
 
   &__title {
     @include section-head;
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
     @include tablet {
-      padding: 48px 36px 36px;
+      padding: 3rem 2.25rem 2.25rem;
     }
 
     @include desktop {
@@ -173,33 +173,33 @@
 
   &__container {
     @include flex(space-between);
-    gap: 16px;
-    border-bottom: 1px solid $secondary-grey;
+    gap: 1rem;
+    border-bottom: 0.0625rem solid $secondary-grey;
 
     @include tablet {
-      margin: 0 100px;
-      padding-bottom: 24px;
+      margin: 0 6.25rem;
+      padding-bottom: 1.5rem;
     }
 
     @include desktop {
-      margin: 0 350px;
+      margin: 21.875rem;
     }
   }
 
   &__image,
   .comment__image {
     border-radius: 50%;
-    height: 36px;
+    height: 2.25rem;
     aspect-ratio: 1;
     background-size: cover;
 
     @include tablet {
-      height: 48px;
+      height: 3rem;
       aspect-ratio: 1;
     }
   }
   &__image {
-    margin-top: 16px;
+    margin-top: 1rem;
   }
   &__fields {
     @include flex (flex-start, stretch, column);
@@ -210,24 +210,24 @@
     @include labelbutton;
     text-transform: uppercase;
     color: $primary-silver;
-    margin-bottom: 4px;
+    margin-bottom: 0.25rem;
   }
 
   &__name,
   &__comment {
     border-style: none;
-    border: 1px solid $secondary-grey;
+    border: 0.0625rem solid $secondary-grey;
     background-color: $secondary-white;
-    border-radius: 4px;
-    margin-bottom: 16px;
-    padding: 12px;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
 
     @include tablet {
-      padding: 16px;
+      padding: 1rem;
     }
 
     &:active {
-      border: 1px solid $primary-black;
+      border: 0.0625rem solid $primary-black;
     }
 
     &::placeholder {
@@ -235,16 +235,16 @@
     }
   }
   &__name {
-    height: 36px;
+    height: 2.25rem;
 
     @include tablet {
-      height: 48px;
+      height: 3rem;
     }
   }
 
   &__comment {
     resize: none;
-    height: 80px;
+    height: 5rem;
   }
 
   &__button {
@@ -257,7 +257,7 @@
 .comment {
   @include body-copy;
   color: $primary-black;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 
   &__image {
     background-color: $secondary-grey;
@@ -265,17 +265,17 @@
 
   &__row {
     display: flex;
-    gap: 16px;
-    border-bottom: 1px solid $secondary-grey;
-    padding: 16px 0;
+    gap: 1rem;
+    border-bottom: 0.0625rem solid $secondary-grey;
+    padding: 1rem 0;
 
     @include tablet {
-      margin: 0 100px;
+      margin: 0 6.25rem;
     }
 
     @include desktop {
-      margin: 0 350px;
-      padding-bottom: 36px;
+      margin: 0 21.875rem;
+      padding-bottom: 2.25rem;
     }
   }
 
@@ -285,7 +285,7 @@
 
   &__item {
     @include flex(space-between); 
-    padding-bottom: 4px;
+    padding-bottom: 0.25rem;
   }
 
   &__name {
@@ -298,5 +298,5 @@
 }
 
 .error {
-  border: 1px solid #d22d2d;
+  border: 0.0625rem solid #d22d2d;
 }
