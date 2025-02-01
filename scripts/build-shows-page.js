@@ -91,7 +91,7 @@ list.addEventListener("click", (e) => {
   if (!el) {
     return;
   }
-  const activeClass = "show__item--active";
+  const activeClass = "show__item--grey-background";
   const active = list.querySelector(`.${activeClass}`);
   if (active) {
     active.classList.remove(activeClass);
