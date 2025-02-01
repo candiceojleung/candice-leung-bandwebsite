@@ -16,7 +16,6 @@
           alt="bandsite-logo"
         />
       </a>
-
       <nav class="navbar">
         <ul class="navbar__list">
           <li class="navbar__link">
@@ -34,14 +33,13 @@
         </ul>
       </nav>
     </header>
-
     <main>
       <section class="hero">
         <h1 class="hero__title">The Bees Knees</h1>
       </section>
-
       <section class="intro">
         <h2 class="intro__title">About the Musicians</h2>
+        <!-- start of div where common margin/padding indentation begins -->
         <div class="intro__paragraph">
           <img
             class="intro__image"
@@ -53,7 +51,6 @@
             to say 'this needs to be better, back to the drawing board'"
           </p>
           <p class="intro__credit">- Lead vocalist of The Bees</p>
-
           <section class="bio">
             <h3 class="bio__title">The Bees Knees</h3>
             <div class="bio__descriptions">
@@ -83,6 +80,7 @@
             </div>
           </section>
         </div>
+        <!-- end of div for margin/padding indentation -->
       </section>
       <section class="photo">
         <h2 class="photo__title">Photo Gallery</h2>
@@ -134,6 +132,7 @@
           />
         </div>
       </section>
+      <!-- form to create new comments  -->
       <section id="formSection" class="form">
         <h2 class="form__title">Join the Conversation</h2>
         <div class="form__container">
@@ -144,6 +143,7 @@
               alt="side profile of man"
             />
           </div>
+          <!-- form fields that require validation  -->
           <form id="form" class="form__fields">
             <label for="name" class="form__field">Name</label>
             <input
@@ -155,18 +155,19 @@
             />
             <label for="comment" class="form__field">Comment</label>
             <textarea
-              class="form__comment"
               id="formComment"
+              class="form__comment"
               name="formComment"
               placeholder="Add a new comment"
             ></textarea>
+            <!-- add eventListener to button for form submission  -->
             <div class="form__button">
-            <button id="button" name="button" class="button">Comment</button>
-          </div>
+              <button id="button" name="button" class="button">Comment</button>
+            </div>
           </form>
         </div>
         <div id="commentSection" class="comment"></div>
-        <!-- will be built out in javascript -->
+        <!-- new and existing comments will be built out in javascript -->
       </section>
     </main>
     <footer class="footer">
@@ -197,6 +198,7 @@
         </div>
         <div class="footer__spacer"></div>
         <div class="footer__aside">
+        <!-- footer logo that will hidden on mobile screen size  -->
           <img
             class="footer__aside footer__aside--hidden"
             src="./assets/logos/Logo-bandsite.svg"
@@ -231,6 +233,7 @@
         </div>
       </div>
       <div class="footer__logo">
+      <!-- footer logo that will be hidden in tablet and desktop screen sizes -->
         <img
           class="footer__logo footer__logo--hidden"
           src="./assets/logos/Logo-bandsite.svg"

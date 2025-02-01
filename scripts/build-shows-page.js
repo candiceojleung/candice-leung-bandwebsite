@@ -31,6 +31,7 @@ const shows = [
   },
 ];
 
+//for-of loop to display showdates
 const list = document.getElementById("show-list");
 
 for (const showObj of shows) {

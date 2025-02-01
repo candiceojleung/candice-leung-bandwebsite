@@ -19,7 +19,7 @@ const comments = [
   },
 ];
 
-//function to display existing comments
+//function to display old comments
 const formEl = document.getElementById("form");
 const commentsEl = document.getElementById("commentSection");
 
