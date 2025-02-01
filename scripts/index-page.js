@@ -19,6 +19,7 @@ const comments = [
   },
 ];
 
+//function to display existing comments
 const formEl = document.getElementById("form");
 const commentsEl = document.getElementById("commentSection");
 
@@ -50,6 +51,7 @@ function displayComments() {
   }
 }
 
+//functions to create div and p tags for the comment section
 function createDiv(className) {
   const div = document.createElement("div");
   div.className = className;
@@ -65,6 +67,7 @@ function createP(className, text = "") {
 
 displayComments();
 
+//function to create dynamic time-stamps
 const d1 = new Date();
 const date = formatDate(d1);
 
@@ -89,6 +92,7 @@ function formatDate(d1) {
   }
 }
 
+//event listener to add new comments while validating form so that an errror state occurs when form fields are empty
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
 

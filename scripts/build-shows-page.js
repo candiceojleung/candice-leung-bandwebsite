@@ -61,6 +61,7 @@ for (const showObj of shows) {
   list.append(show);
 }
 
+//functions to create buttons, divs, and paragraph tags
 function createButton(className, text = "") {
   const button = document.createElement("button");
   button.className = className;
@@ -82,6 +83,7 @@ function createP(className, text = "") {
   return p;
 }
 
+//event listener to highlight selected show date until another date is selected
 list.addEventListener("click", (e) => {
   const el = e.target.closest(".show__item");
 
