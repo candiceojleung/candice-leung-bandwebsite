@@ -97,6 +97,7 @@ a {
   &__title {
     @include section-head;
     padding: 1.5rem 1rem;
+    margin-top: 1rem;
 
     @include tablet {
       padding: 1.5rem 0rem;
@@ -210,7 +211,7 @@ a {
   font-size: 0.8125rem;
   height: 2.5rem;
   width: 100%;
-  margin-bottom: 1rem;
+  // margin-bottom: 1rem;
   padding: 0 2rem;
   border-radius: 0.25rem;
   background-color: $primary-black;

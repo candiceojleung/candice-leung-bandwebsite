@@ -153,7 +153,7 @@
 .form {
   @include body-copy;
   color: $primary-black;
-  padding: 1rem;
+  padding: 1rem 1rem 0;
 
   @include tablet {
     padding: 0;
@@ -175,6 +175,7 @@
   &__container {
     @include flex(space-between);
     gap: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 0.0625rem solid $secondary-grey;
 
     @include tablet {
