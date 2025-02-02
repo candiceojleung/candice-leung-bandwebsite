@@ -76,10 +76,11 @@ iframe {
   object-fit: contain;
 
   @include tablet {
-    padding: 0 0 2.25rem;
+    padding: 0 2.25rem 2.25rem;
   }
 
   @include desktop {
+    margin-top: 5rem;
     padding-right: 5rem;
   }
 }
