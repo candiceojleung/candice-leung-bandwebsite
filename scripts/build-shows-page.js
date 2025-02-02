@@ -41,7 +41,7 @@ for (const showObj of shows) {
   const showDate = createDiv("show__header", "Date");
   show.append(showDate);
 
-  const dateInfo = createP("show__info", showObj.date);
+  const dateInfo = createP("show__info--bold", showObj.date);
   show.append(dateInfo);
 
   const showVenue = createDiv("show__header", "Venue");
