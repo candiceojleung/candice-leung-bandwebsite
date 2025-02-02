@@ -11,12 +11,12 @@
     size: cover;
     repeat: no-repeat;
   }
-  min-height: 80vw;
+  min-height:80vw;
   width: 100%;
 
   &__content {
     @include flex(center, stretch, column);
-    min-height: 80vw;
+     min-height: 80vw;
 
     @include desktop {
       @include flex(space-around, center, row);
@@ -45,6 +45,7 @@
 
   &__title {
     @include page-head;
+    padding-bottom: 0;
     color: $primary-white;
     width: 90%;
 
@@ -68,10 +69,11 @@
 
 iframe {
   width: 100%;
-  height: auto;
+  height:9.375rem; 
   border: none;
   border-radius: 0.125rem;
   padding: 1rem;
+  object-fit:contain;
 
   @include tablet {
     padding: 0 0 0 2.25rem;
@@ -92,7 +94,7 @@ iframe {
 
   &__title {
     @include section-head;
-    padding: 1rem;
+    padding: 1.5rem 1rem 1rem;
 
     @include tablet {
       padding: 2.25rem;
@@ -161,7 +163,8 @@ iframe {
   }
 
   &__item {
-    padding: 1rem;
+    padding: 0 1rem;
+    margin-bottom:1rem;  
     border-bottom: 0.0625rem solid $secondary-grey;
 
     &:hover {

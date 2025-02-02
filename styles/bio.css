@@ -580,7 +580,8 @@ a {
   border-radius: 50%;
   height: 2.25rem;
   aspect-ratio: 1;
-  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (min-width: 48rem) {
   .form__image,

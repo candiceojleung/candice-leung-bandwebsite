@@ -365,6 +365,7 @@ a {
   line-height: 2rem;
   font-weight: 700;
   padding: 1.5rem 1rem 1rem;
+  padding-bottom: 0;
   color: #ffffff;
   width: 90%;
 }
@@ -398,10 +399,12 @@ a {
 
 iframe {
   width: 100%;
-  height: auto;
+  height: 9.375rem;
   border: none;
   border-radius: 0.125rem;
   padding: 1rem;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media (min-width: 48rem) {
   iframe {
@@ -435,7 +438,7 @@ iframe {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
-  padding: 1rem;
+  padding: 1.5rem 1rem 1rem;
 }
 @media (min-width: 48rem) {
   .show__title {
@@ -529,7 +532,8 @@ iframe {
   }
 }
 .show__item {
-  padding: 1rem;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
   border-bottom: 0.0625rem solid #e1e1e1;
 }
 .show__item:hover {
