@@ -488,14 +488,14 @@ iframe {
 }
 @media (min-width: 80rem) {
   .show__subheaders {
-    margin: 2.25rem 5rem 0 3.875rem;
-    padding: 1.5rem 1.125rem;
-    width: 71%;
+    width: 67%;
+    margin: 3.5rem 5rem 2.25rem;
+    padding: 0;
   }
 }
 @media (min-width: 80rem) {
   .show__date {
-    flex: 1;
+    flex: 2;
   }
 }
 @media (min-width: 80rem) {
