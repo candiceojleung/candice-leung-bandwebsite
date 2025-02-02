@@ -87,11 +87,11 @@ a {
   @include tablet {
     @include flex;
     flex-direction: column;
-    padding: 2.25rem 2.25rem 0;
+    padding: 0 2.25rem;
   }
 
   @include desktop {
-    padding: 3rem 5rem 2.25rem;
+    padding: 0 5rem;
   }
 
   &__title {
