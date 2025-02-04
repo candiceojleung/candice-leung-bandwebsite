@@ -1,3 +1,10 @@
+const API_KEY = "a28c14d5-28a2-499e-a03a-065fb3390cad";
+const bandSiteApi = new BandSiteApi(API_KEY);
+console.log(bandSiteApi);
+
+
+
+
 const shows = [
   {
     date: "Mon Sept 09 2024",

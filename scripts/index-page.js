@@ -1,23 +1,51 @@
-const comments = [
-  {
-    name: "Isaac Tadesse",
-    date: new Date("10/20/2023"),
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-  {
-    name: "Christina Cabrera",
-    date: new Date("10/28/2023"),
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Victor Pinto",
-    date: new Date("11/02/2023"),
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-];
+const API_KEY = "36814136-3740-4923-8812-8c4b91f868ae";
+const bandSiteApi = new BandSiteApi(API_KEY);
+console.log(bandSiteApi);
+
+let comments= new Array();
+async function get() {
+  try {
+    comments = await bandSiteApi.getComments();
+    console.log(comments);
+    displayComments();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+get();
+//  async function post(){
+//   try {
+//     const newComments = await bandSiteApi.postComment({
+//     });
+//     console.log(newComments)
+//   } catch (error) {
+//     console.log("There is an error");
+//   }
+// };
+
+// post();
+
+// const comments = [
+//   {
+//     name: "Isaac Tadesse",
+//     date: new Date("10/20/2023"),
+//     comment:
+//       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+//   },
+//   {
+//     name: "Christina Cabrera",
+//     date: new Date("10/28/2023"),
+//     comment:
+//       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+//   },
+//   {
+//     name: "Victor Pinto",
+//     date: new Date("11/02/2023"),
+//     comment:
+//       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+//   },
+// ];
 
 //function to display old comments
 const formEl = document.getElementById("form");
@@ -29,7 +57,7 @@ function displayComments() {
     console.log(comment);
 
     const commentSect = createDiv("comment__row");
-    commentsEl.prepend(commentSect);
+    commentsEl.append(commentSect);
 
     const commentImage = createDiv("comment__image");
     commentSect.append(commentImage);
@@ -43,7 +71,8 @@ function displayComments() {
     const nameEl = createP("comment__name", comment.name);
     commentItem.append(nameEl);
 
-    const dateEl = createP("comment__date", formatDate(comment.date));
+    const timeDate =new Date(comment.timestamp);
+    const dateEl = createP("comment__date", formatDate(timeDate));
     commentItem.append(dateEl);
 
     const commentEl = createP("comment__text", comment.comment);
@@ -65,11 +94,9 @@ function createP(className, text = "") {
   return p;
 }
 
-displayComments();
-
 //function to create dynamic time-stamps
-const d1 = new Date();
-const date = formatDate(d1);
+// const d1 = new Date();
+// const date = formatDate(d1);
 
 function formatDate(d1) {
   const current = new Date();
