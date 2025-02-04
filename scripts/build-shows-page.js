@@ -3,44 +3,56 @@ const bandSiteApi = new BandSiteApi(API_KEY);
 console.log(bandSiteApi);
 
 
+let shows= new Array();
+async function get() {
+  try {
+    shows = await bandSiteApi.getShows();
+    console.log(shows);
+    createShows();
+  } catch (error) {
+    console.log(error);
+  }
+}
+get();
 
 
-const shows = [
-  {
-    date: "Mon Sept 09 2024",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 17 2024",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Oct 12 2024",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 16 2024",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 29 2024",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 18 2024",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+// const shows = [
+//   {
+//     date: "Mon Sept 09 2024",
+//     venue: "Ronald Lane",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Tue Sept 17 2024",
+//     venue: "Pier 3 East",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Sat Oct 12 2024",
+//     venue: "View Lounge",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Sat Nov 16 2024",
+//     venue: "Hyatt Agency",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Fri Nov 29 2024",
+//     venue: "Moscow Center",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Wed Dec 18 2024",
+//     venue: "Press Club",
+//     location: "San Francisco, CA",
+//   },
+// ];
 
 //for-of loop to display showdates
 const list = document.getElementById("show-list");
 
+function createShows(){
 for (const showObj of shows) {
   const show = document.createElement("div");
   show.classList.add("show__item");
@@ -48,13 +60,14 @@ for (const showObj of shows) {
   const showDate = createDiv("show__header", "Date");
   show.append(showDate);
 
-  const dateInfo = createP("show__info--bold", showObj.date);
+
+  const dateInfo = createP("show__info--bold", new Date(showObj.date).toDateString());
   show.append(dateInfo);
 
   const showVenue = createDiv("show__header", "Venue");
   show.append(showVenue);
 
-  const venueInfo = createP("show__info", showObj.venue);
+  const venueInfo = createP("show__info", showObj.place);
   show.append(venueInfo);
 
   const showLocation = createDiv("show__header", "Location");
@@ -67,6 +80,7 @@ for (const showObj of shows) {
   show.append(button);
 
   list.append(show);
+}
 }
 
 //functions to create buttons, divs, and paragraph tags

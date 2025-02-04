@@ -37,7 +37,7 @@ function displayComments() {
     console.log(comment);
 
     const commentSect = createDiv("comment__row");
-    commentsEl.append(commentSect);
+    commentsEl.prepend(commentSect);
 
     const commentImage = createDiv("comment__image");
     commentSect.append(commentImage);
@@ -75,7 +75,6 @@ function createP(className, text = "") {
 }
 
 //function to create dynamic time-stamps
-
 function formatDate(d1) {
   const current = new Date();
   const msDiff = current.getTime() - d1.getTime();
@@ -131,7 +130,7 @@ formEl.addEventListener("submit", (e) => {
   } else {
     const newComment = {
       name: e.target.formName.value,
-      date: new Date(),
+      timestamp: new Date(),
       comment: e.target.formComment.value,
     };
 

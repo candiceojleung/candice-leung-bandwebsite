@@ -12,13 +12,13 @@ class BandSiteApi {
 
   async getComments() {
     const url = `${this.baseUrl}/comments/?api_key=${this.apiKey}`;
-    const response = await axios.get(url);
-    return response.data;
+    const response = (await axios.get(url)).data.reverse();
+    return response;
   }
 
   async getShows() {
     const url = `${this.baseUrl}/showdates/?api_key=${this.apiKey}`;
     const response = await axios.get(url);
-    return response;
+    return response.data;
   }
 }
