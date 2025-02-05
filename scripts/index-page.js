@@ -2,18 +2,22 @@ const API_KEY = "36814136-3740-4923-8812-8c4b91f868ae";
 const bandSiteApi = new BandSiteApi(API_KEY);
 console.log(bandSiteApi);
 
+
+//async function to get comment secion
+
 let comments = new Array();
 async function getCommentArray() {
   try {
     comments = await bandSiteApi.getComments();
     console.log(comments);
-    renderComments();
+    renderAllComments();
   } catch (error) {
     console.log(error);
   }
 }
 getCommentArray();
 
+//async function to post new comment, and then get comment section back
 async function postCommentArray(newComment) {
   try {
     await bandSiteApi.postComment(newComment);
@@ -25,8 +29,7 @@ async function postCommentArray(newComment) {
 
 
 
-
-//function to display old comments
+//function to create comment 
 const formEl = document.getElementById("form");
 const commentsEl = document.getElementById("commentSection");
 
@@ -71,8 +74,9 @@ function createP(className, text = "") {
   return p;
 }
 
-function renderComments() {
-  commentsEl.textContent = "";
+//function to show all comments 
+function renderAllComments() {
+  commentsEl.innerHTML = "";
   for (let i = 0; i < comments.length; i++) {
     const commentElement = createCommentElement(comments[i]);
     commentsEl.prepend(commentElement);
