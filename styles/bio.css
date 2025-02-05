@@ -694,7 +694,7 @@ a {
   }
 }
 .comment__container {
-  flex: 1;
+  flex-direction: column;
 }
 .comment__item {
   display: flex;

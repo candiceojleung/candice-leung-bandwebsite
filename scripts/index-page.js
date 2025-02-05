@@ -54,8 +54,17 @@ function createCommentElement(comment) {
   const dateEl = createP("comment__date", formatDate(timeDate));
   commentItem.append(dateEl);
 
+  const commentAction = createDiv ("comment__actions");
+  commentSect.append(commentAction);
+
   const commentEl = createP("comment__text", comment.comment);
   commentContainer.append(commentEl);
+  
+  const buttonLike = createButton("comment__like", "👍");
+  commentAction.append(buttonLike); 
+
+  const buttonDelete= createButton("comment__delete", "🗑️"); 
+  commentAction.append(buttonDelete);
 
   return commentSect;
 }
@@ -73,6 +82,14 @@ function createP(className, text = "") {
   p.textContent = text;
   return p;
 }
+
+function createButton(className, text = "") {
+  const button = document.createElement("button");
+  button.className = className;
+  button.textContent = text;
+  return button;
+}
+
 
 //function to show all comments 
 function renderAllComments() {

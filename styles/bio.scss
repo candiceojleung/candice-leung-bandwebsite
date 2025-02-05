@@ -286,7 +286,7 @@
   }
 
   &__container {
-    flex: 1;
+    flex-direction:column; 
   }
 
   &__item {
@@ -302,6 +302,8 @@
     color: $primary-silver;
   }
 }
+
+
 
 .error {
   border: 0.0625rem solid #d22d2d;
