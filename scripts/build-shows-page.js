@@ -3,17 +3,16 @@ const bandSiteApi = new BandSiteApi(API_KEY);
 console.log(bandSiteApi);
 
 
-let shows= new Array();
-async function get() {
+async function getShowsArray() {
   try {
     shows = await bandSiteApi.getShows();
     console.log(shows);
-    createShows();
+    createShows(shows);
   } catch (error) {
     console.log(error);
   }
 }
-get();
+getShowsArray();
 
 //for-of loop to display showdates
 const list = document.getElementById("show-list");

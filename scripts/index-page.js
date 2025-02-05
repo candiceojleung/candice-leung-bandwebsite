@@ -5,12 +5,11 @@ console.log(bandSiteApi);
 
 //async function to get comment secion
 
-let comments = new Array();
 async function getCommentArray() {
   try {
     comments = await bandSiteApi.getComments();
     console.log(comments);
-    renderAllComments();
+    renderAllComments(comments);
   } catch (error) {
     console.log(error);
   }
@@ -54,17 +53,17 @@ function createCommentElement(comment) {
   const dateEl = createP("comment__date", formatDate(timeDate));
   commentItem.append(dateEl);
 
-  const commentAction = createDiv ("comment__actions");
-  commentSect.append(commentAction);
-
   const commentEl = createP("comment__text", comment.comment);
   commentContainer.append(commentEl);
-  
-  const buttonLike = createButton("comment__like", "👍");
-  commentAction.append(buttonLike); 
 
-  const buttonDelete= createButton("comment__delete", "🗑️"); 
-  commentAction.append(buttonDelete);
+  const commentAction = createDiv ("comment__actions");
+  commentContainer.append(commentAction);
+
+  // const buttonLike = createButton("comment__like", "");
+  // commentAction.append(buttonLike); 
+
+  // const buttonDelete= createButton("comment__delete", ""); 
+  // commentAction.append(buttonDelete);
 
   return commentSect;
 }
@@ -92,7 +91,7 @@ function createButton(className, text = "") {
 
 
 //function to show all comments 
-function renderAllComments() {
+function renderAllComments(comments) {
   commentsEl.innerHTML = "";
   for (let i = 0; i < comments.length; i++) {
     const commentElement = createCommentElement(comments[i]);

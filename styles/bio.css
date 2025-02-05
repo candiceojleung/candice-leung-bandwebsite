@@ -695,6 +695,7 @@ a {
 }
 .comment__container {
   flex-direction: column;
+  flex: 1;
 }
 .comment__item {
   display: flex;
@@ -708,6 +709,12 @@ a {
 }
 .comment__date {
   color: #afafaf;
+}
+.comment__actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  flex-direction: row;
 }
 
 .error {
