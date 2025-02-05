@@ -2,62 +2,55 @@ const API_KEY = "36814136-3740-4923-8812-8c4b91f868ae";
 const bandSiteApi = new BandSiteApi(API_KEY);
 console.log(bandSiteApi);
 
-let comments= new Array();
+let comments = new Array();
 async function get() {
   try {
     comments = await bandSiteApi.getComments();
     console.log(comments);
-    displayComments();
+    renderComments();
   } catch (error) {
     console.log(error);
   }
 }
-
 get();
-//  async function post(){
+
+// async function post(newComment){
 //   try {
-//     const newComments = await bandSiteApi.postComment({
-//     });
-//     console.log(newComments)
+//   await bandSiteApi.postComment (newComment);
+//    get();
 //   } catch (error) {
-//     console.log("There is an error");
+//     console.log(error);
 //   }
 // };
-
-// post();
-
 
 //function to display old comments
 const formEl = document.getElementById("form");
 const commentsEl = document.getElementById("commentSection");
 
-function displayComments() {
-  for (let i = 0; i < comments.length; i++) {
-    const comment = comments[i];
-    console.log(comment);
+function createCommentElement(comment) {
+  const commentSect = createDiv("comment__row");
+  commentsEl.prepend(commentSect);
 
-    const commentSect = createDiv("comment__row");
-    commentsEl.prepend(commentSect);
+  const commentImage = createDiv("comment__image");
+  commentSect.append(commentImage);
 
-    const commentImage = createDiv("comment__image");
-    commentSect.append(commentImage);
+  const commentContainer = createDiv("comment__container");
+  commentSect.append(commentContainer);
 
-    const commentContainer = createDiv("comment__container");
-    commentSect.append(commentContainer);
+  const commentItem = createDiv("comment__item");
+  commentContainer.append(commentItem);
 
-    const commentItem = createDiv("comment__item");
-    commentContainer.append(commentItem);
+  const nameEl = createP("comment__name", comment.name);
+  commentItem.append(nameEl);
 
-    const nameEl = createP("comment__name", comment.name);
-    commentItem.append(nameEl);
+  const timeDate = new Date(comment.timestamp);
+  const dateEl = createP("comment__date", formatDate(timeDate));
+  commentItem.append(dateEl);
 
-    const timeDate =new Date(comment.timestamp);
-    const dateEl = createP("comment__date", formatDate(timeDate));
-    commentItem.append(dateEl);
+  const commentEl = createP("comment__text", comment.comment);
+  commentContainer.append(commentEl);
 
-    const commentEl = createP("comment__text", comment.comment);
-    commentContainer.append(commentEl);
-  }
+  return commentSect;
 }
 
 //functions to create div and p tags for the comment section
@@ -72,6 +65,14 @@ function createP(className, text = "") {
   p.className = className;
   p.textContent = text;
   return p;
+}
+
+function renderComments() {
+  commentsEl.textContent = "";
+  for (let i = 0; i < comments.length; i++) {
+    const commentElement = createCommentElement(comments[i]);
+    commentsEl.prepend(commentElement);
+  }
 }
 
 //function to create dynamic time-stamps
@@ -135,9 +136,7 @@ formEl.addEventListener("submit", (e) => {
     };
 
     comments.push(newComment);
-    commentsEl.replaceChildren();
-    displayComments();
-
+    renderComments();
     formEl.reset();
   }
 });
