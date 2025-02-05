@@ -12,7 +12,7 @@ class BandSiteApi {
 
   async getComments() {
     const url = `${this.baseUrl}/comments/?api_key=${this.apiKey}`;
-    const response = (await axios.get(url)).data.reverse();
+    const response = (await axios.get(url)).data.sort((a,b)=>a.timestamp-b.timestamp);
     return response;
   }
 
@@ -21,4 +21,11 @@ class BandSiteApi {
     const response = await axios.get(url);
     return response.data;
   }
+
+  
+  async deleteProduct(commentID) {
+    const url=`${this.baseUrl}/comments/${commentID}?api_key=${this.apiKey}`;
+     const response = await axios.delete(url, commentID);
+     return response;
+}
 }

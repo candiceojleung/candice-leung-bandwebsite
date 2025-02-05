@@ -3,7 +3,7 @@ const bandSiteApi = new BandSiteApi(API_KEY);
 console.log(bandSiteApi);
 
 let comments = new Array();
-async function get() {
+async function getCommentArray() {
   try {
     comments = await bandSiteApi.getComments();
     console.log(comments);
@@ -12,24 +12,28 @@ async function get() {
     console.log(error);
   }
 }
-get();
+getCommentArray();
 
-// async function post(newComment){
-//   try {
-//   await bandSiteApi.postComment (newComment);
-//    get();
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
+async function postCommentArray(newComment) {
+  try {
+    await bandSiteApi.postComment(newComment);
+    getCommentArray();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+
 
 //function to display old comments
 const formEl = document.getElementById("form");
 const commentsEl = document.getElementById("commentSection");
 
 function createCommentElement(comment) {
+
   const commentSect = createDiv("comment__row");
-  commentsEl.prepend(commentSect);
+  commentsEl.append(commentSect);
 
   const commentImage = createDiv("comment__image");
   commentSect.append(commentImage);
@@ -84,7 +88,9 @@ function formatDate(d1) {
   const hoursDiff = minsDiff / 60;
   const daysDiff = hoursDiff / 24;
 
-  if (secDiff < 60) {
+  if (msDiff < 0) {
+    return `${Math.floor(secDiff)} seconds ago`;
+  } else if (secDiff < 60) {
     return `${Math.floor(secDiff)} seconds ago`;
   } else if (minsDiff < 60) {
     return `${Math.floor(minsDiff)} minutes ago`;
@@ -131,12 +137,10 @@ formEl.addEventListener("submit", (e) => {
   } else {
     const newComment = {
       name: e.target.formName.value,
-      timestamp: new Date(),
       comment: e.target.formComment.value,
     };
 
-    comments.push(newComment);
-    renderComments();
+    postCommentArray(newComment);
     formEl.reset();
   }
 });
