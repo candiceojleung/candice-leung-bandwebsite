@@ -1,39 +1,16 @@
+import { BandSiteApi } from "./band-site-api.js";
+
 const API_KEY = "36814136-3740-4923-8812-8c4b91f868ae";
 const bandSiteApi = new BandSiteApi(API_KEY);
 console.log(bandSiteApi);
 
+let comments = await bandSiteApi.getComments();
 
-//async function to get comment secion
-
-async function getCommentArray() {
-  try {
-    comments = await bandSiteApi.getComments();
-    console.log(comments);
-    renderAllComments(comments);
-  } catch (error) {
-    console.log(error);
-  }
-}
-getCommentArray();
-
-//async function to post new comment, and then get comment section back
-async function postCommentArray(newComment) {
-  try {
-    await bandSiteApi.postComment(newComment);
-    getCommentArray();
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-
-
-//function to create comment 
+//function to create comment
 const formEl = document.getElementById("form");
 const commentsEl = document.getElementById("commentSection");
 
 function createCommentElement(comment) {
-
   const commentSect = createDiv("comment__row");
   commentsEl.append(commentSect);
 
@@ -56,17 +33,19 @@ function createCommentElement(comment) {
   const commentEl = createP("comment__text", comment.comment);
   commentContainer.append(commentEl);
 
-  const commentAction = createDiv ("comment__actions");
+  const commentAction = createDiv("comment__actions");
   commentContainer.append(commentAction);
 
   // const buttonLike = createButton("comment__like", "");
-  // commentAction.append(buttonLike); 
+  // commentAction.append(buttonLike);
 
-  // const buttonDelete= createButton("comment__delete", ""); 
+  // const buttonDelete= createButton("comment__delete", "");
   // commentAction.append(buttonDelete);
 
   return commentSect;
 }
+
+renderAllComments(comments);
 
 //functions to create div and p tags for the comment section
 function createDiv(className) {
@@ -89,15 +68,14 @@ function createButton(className, text = "") {
   return button;
 }
 
-
-//function to show all comments 
+//function to show all comments
 function renderAllComments(comments) {
   commentsEl.innerHTML = "";
   for (let i = 0; i < comments.length; i++) {
-    const commentElement = createCommentElement(comments[i]);
-    commentsEl.prepend(commentElement);
+   createCommentElement(comments[i]);
   }
 }
+
 
 //function to create dynamic time-stamps
 function formatDate(d1) {
@@ -124,7 +102,7 @@ function formatDate(d1) {
 }
 
 //event listener to add new comments while validating form so that an errror state occurs when form fields are empty
-formEl.addEventListener("submit", (e) => {
+formEl.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const nameField = document.getElementById("formName");
@@ -160,7 +138,9 @@ formEl.addEventListener("submit", (e) => {
       comment: e.target.formComment.value,
     };
 
-    postCommentArray(newComment);
+    await bandSiteApi.postComment(newComment);
+    comments=await bandSiteApi.getComments(); 
+    renderAllComments(comments);
     formEl.reset();
   }
 });
