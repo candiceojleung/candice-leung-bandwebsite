@@ -36,7 +36,7 @@ function createCommentElement(comment) {
   const commentAction = createDiv("comment__actions");
   commentContainer.append(commentAction);
 
-  // const buttonLike = createButton("comment__like", "");
+  // const buttonLike = createButton("comment__like", "<img src=");
   // commentAction.append(buttonLike);
 
   // const buttonDelete= createButton("comment__delete", "");
@@ -64,7 +64,7 @@ function createP(className, text = "") {
 function createButton(className, text = "") {
   const button = document.createElement("button");
   button.className = className;
-  button.textContent = text;
+  button.innerHTML = text;
   return button;
 }
 

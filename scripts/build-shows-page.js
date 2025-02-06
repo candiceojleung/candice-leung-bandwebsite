@@ -1,21 +1,14 @@
+import { BandSiteApi } from "./band-site-api.js";
+
 const API_KEY = "a28c14d5-28a2-499e-a03a-065fb3390cad";
 const bandSiteApi = new BandSiteApi(API_KEY);
 console.log(bandSiteApi);
 
 
-async function getShowsArray() {
-  try {
-    shows = await bandSiteApi.getShows();
-    console.log(shows);
-    createShows(shows);
-  } catch (error) {
-    console.log(error);
-  }
-}
-getShowsArray();
-
-//for-of loop to display showdates
+let shows = await bandSiteApi.getShows();
 const list = document.getElementById("show-list");
+createShows(shows);
+
 
 function createShows(){
 for (const showObj of shows) {
@@ -47,6 +40,8 @@ for (const showObj of shows) {
   list.append(show);
 }
 }
+
+
 
 //functions to create buttons, divs, and paragraph tags
 function createButton(className, text = "") {
