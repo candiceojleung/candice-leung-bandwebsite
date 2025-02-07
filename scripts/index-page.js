@@ -36,11 +36,22 @@ function createCommentElement(comment) {
   const commentAction = createDiv("comment__actions");
   commentContainer.append(commentAction);
 
-  // const buttonLike = createButton("comment__like", "<img src=");
-  // commentAction.append(buttonLike);
+  const likeButton = createButton("comment__like", "");
+  commentAction.append(likeButton);
 
-  // const buttonDelete= createButton("comment__delete", "");
-  // commentAction.append(buttonDelete);
+  const imgLike = document.createElement("img");
+  imgLike.src = "../assets/icons/SVG/icon-like.svg";
+  likeButton.append(imgLike);
+
+  const likeCount = createP("comment__number",` (${comment.likes || 0})`); 
+  likeButton.append(likeCount);
+
+  const deleteButton=createButton("comment__delete",""); 
+  commentAction.append(deleteButton); 
+
+  const imgDelete=document.createElement("img"); 
+  imgDelete.src="assets/icons/SVG/icon-delete.svg"; 
+  deleteButton.append(imgDelete); 
 
   return commentSect;
 }
@@ -72,10 +83,9 @@ function createButton(className, text = "") {
 function renderAllComments(comments) {
   commentsEl.innerHTML = "";
   for (let i = 0; i < comments.length; i++) {
-   createCommentElement(comments[i]);
+    createCommentElement(comments[i]);
   }
 }
-
 
 //function to create dynamic time-stamps
 function formatDate(d1) {
@@ -139,7 +149,7 @@ formEl.addEventListener("submit", async (e) => {
     };
 
     await bandSiteApi.postComment(newComment);
-    comments=await bandSiteApi.getComments(); 
+    comments = await bandSiteApi.getComments();
     renderAllComments(comments);
     formEl.reset();
   }

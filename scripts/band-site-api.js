@@ -36,18 +36,18 @@ export class BandSiteApi {
     }
   }
 
-  async likeComment(comment) {
+  async likeComment(commentId) {
     try {
-      const url = `${this.baseUrl}//comments/${comment.id}?api_key=${this.apiKey}`;
+      const url = `${this.baseUrl}//comments/${commentId}/like?api_key=${this.apiKey}`;
       const response = await axios.put(url);
       return response;
     } catch (error) {
       console.log(error);
     }}
 
-  async deleteComment(comment) {
+  async deleteComment(commentId) {
     try {
-      const url = `${this.baseUrl}/comments/${comment.id}?api_key=${this.apiKey}`;
+      const url = `${this.baseUrl}/comments/${commentId}?api_key=${this.apiKey}`;
       const response = await axios.delete(url);
       return response;
     } catch (error) {
