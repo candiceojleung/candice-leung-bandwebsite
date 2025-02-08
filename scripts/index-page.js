@@ -40,6 +40,7 @@ function createCommentElement(comment) {
   commentAction.append(likeButton);
 
   const imgLike = document.createElement("img");
+  imgLike.className ="comment__like"
   imgLike.src = "../assets/icons/SVG/icon-like.svg";
   likeButton.append(imgLike);
 

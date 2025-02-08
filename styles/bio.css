@@ -713,8 +713,25 @@ a {
 .comment__actions {
   display: flex;
   justify-content: flex-end;
-  align-items: stretch;
+  align-items: center;
   flex-direction: row;
+  gap: 1rem;
+}
+.comment__like {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border-style: none;
+  background-color: transparent;
+}
+.comment__delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: transparent;
+  border-style: none;
 }
 
 .error {

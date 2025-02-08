@@ -304,8 +304,21 @@
   }
 
   &__actions{
-    @include flex (flex-end);
+    @include flex (flex-end,center);
+    gap:1rem;
 
+  }
+
+  &__like{
+    @include flex(space-between,center);
+    border-style:none; 
+    background-color: transparent;
+  }
+
+  &__delete{
+    @include flex (center,center);
+    background-color:transparent;
+    border-style:none; 
   }
 
 }
