@@ -724,6 +724,7 @@ a {
   flex-direction: row;
   border-style: none;
   background-color: transparent;
+  cursor: pointer;
 }
 .comment__delete {
   display: flex;
@@ -732,6 +733,7 @@ a {
   flex-direction: row;
   background-color: transparent;
   border-style: none;
+  cursor: pointer;
 }
 
 .error {

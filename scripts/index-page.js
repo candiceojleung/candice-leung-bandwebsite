@@ -6,6 +6,27 @@ console.log(bandSiteApi);
 
 let comments = await bandSiteApi.getComments();
 
+async function likedCommentEl(commentId, likeCount) {
+  try {
+    const likedComment = await bandSiteApi.likeComment(commentId);
+    if (likedComment && likedComment.likes !== undefined) {
+      likeCount.textContent = ` (${likedComment.likes})`;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function deletedCommentEl(commentId) {
+  try {
+    await bandSiteApi.deleteComment(commentId);
+    comments = await bandSiteApi.getComments();
+    renderAllComments(comments);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 //function to create comment
 const formEl = document.getElementById("form");
 const commentsEl = document.getElementById("commentSection");
@@ -40,19 +61,27 @@ function createCommentElement(comment) {
   commentAction.append(likeButton);
 
   const imgLike = document.createElement("img");
-  imgLike.className ="comment__like"
+  imgLike.className = "comment__like";
   imgLike.src = "../assets/icons/SVG/icon-like.svg";
   likeButton.append(imgLike);
 
-  const likeCount = createP("comment__number",` (${comment.likes || 0})`); 
+  const likeCount = createP("comment__number", ` (${comment.likes || 0})`);
   likeButton.append(likeCount);
 
-  const deleteButton=createButton("comment__delete",""); 
-  commentAction.append(deleteButton); 
+  likeButton.addEventListener("click", () => {
+    likedCommentEl(comment.id, likeCount);
+  });
 
-  const imgDelete=document.createElement("img"); 
-  imgDelete.src="assets/icons/SVG/icon-delete.svg"; 
-  deleteButton.append(imgDelete); 
+  const deleteButton = createButton("comment__delete", "");
+  commentAction.append(deleteButton);
+
+  const imgDelete = document.createElement("img");
+  imgDelete.src = "assets/icons/SVG/icon-delete.svg";
+  deleteButton.append(imgDelete);
+
+  deleteButton.addEventListener("click", () => {
+    deletedCommentEl(comment.id);
+  });
 
   return commentSect;
 }

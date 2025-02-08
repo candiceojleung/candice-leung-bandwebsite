@@ -313,14 +313,15 @@
     @include flex(space-between,center);
     border-style:none; 
     background-color: transparent;
+    cursor:pointer;
   }
 
   &__delete{
     @include flex (center,center);
     background-color:transparent;
     border-style:none; 
+    cursor:pointer; 
   }
-
 }
 
 .error {
