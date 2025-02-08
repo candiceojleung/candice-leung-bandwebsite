@@ -2,7 +2,6 @@ import { BandSiteApi } from "./band-site-api.js";
 
 const API_KEY = "36814136-3740-4923-8812-8c4b91f868ae";
 const bandSiteApi = new BandSiteApi(API_KEY);
-console.log(bandSiteApi);
 
 let comments = await bandSiteApi.getComments();
 
@@ -23,7 +22,7 @@ async function deletedCommentEl(commentId) {
     comments = await bandSiteApi.getComments();
     renderAllComments(comments);
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 }
 
@@ -60,9 +59,7 @@ function createCommentElement(comment) {
   const likeButton = createButton("comment__like", "");
   commentAction.append(likeButton);
 
-  const imgLike = document.createElement("img");
-  imgLike.className = "comment__like";
-  imgLike.src = "../assets/icons/SVG/icon-like.svg";
+  const imgLike = createImage ("comment__img","../assets/icons/SVG/icon-like.svg","thumbs-up")
   likeButton.append(imgLike);
 
   const likeCount = createP("comment__number", ` (${comment.likes || 0})`);
@@ -75,8 +72,7 @@ function createCommentElement(comment) {
   const deleteButton = createButton("comment__delete", "");
   commentAction.append(deleteButton);
 
-  const imgDelete = document.createElement("img");
-  imgDelete.src = "assets/icons/SVG/icon-delete.svg";
+  const imgDelete = createImage("comment__img","assets/icons/SVG/icon-delete.svg", "trash-can")
   deleteButton.append(imgDelete);
 
   deleteButton.addEventListener("click", () => {
@@ -88,7 +84,7 @@ function createCommentElement(comment) {
 
 renderAllComments(comments);
 
-//functions to create div and p tags for the comment section
+//functions to create div, button, p and img tags for the comment section
 function createDiv(className) {
   const div = document.createElement("div");
   div.className = className;
@@ -107,6 +103,14 @@ function createButton(className, text = "") {
   button.className = className;
   button.innerHTML = text;
   return button;
+}
+
+function createImage(className, src, alt) {
+  const img = document.createElement("img");
+  img.className = className;
+  img.src = src;
+  img.alt = alt;
+  return img;
 }
 
 //function to show all comments

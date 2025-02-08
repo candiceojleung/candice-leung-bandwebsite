@@ -181,6 +181,7 @@ a {
     justify-content: center;
     align-items: flex-end;
     flex-direction: row;
+    padding-top: 0.5rem;
   }
 }
 @media (min-width: 48rem) {

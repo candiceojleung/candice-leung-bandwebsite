@@ -121,6 +121,7 @@ a {
 
     @include tablet {
       @include flex(center, flex-end);
+      padding-top:0.5rem;
     }
   }
 
