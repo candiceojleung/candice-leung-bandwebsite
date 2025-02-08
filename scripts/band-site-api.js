@@ -43,7 +43,8 @@ export class BandSiteApi {
       return response.data;
     } catch (error) {
       console.log(error);
-    }}
+    }
+  }
 
   async deleteComment(commentId) {
     try {

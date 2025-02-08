@@ -2,46 +2,44 @@ import { BandSiteApi } from "./band-site-api.js";
 
 const API_KEY = "a28c14d5-28a2-499e-a03a-065fb3390cad";
 const bandSiteApi = new BandSiteApi(API_KEY);
-console.log(bandSiteApi);
 
-
+//get shows to add to show list
 let shows = await bandSiteApi.getShows();
 const list = document.getElementById("show-list");
 createShows(shows);
 
+function createShows() {
+  for (const showObj of shows) {
+    const show = document.createElement("div");
+    show.classList.add("show__item");
 
-function createShows(){
-for (const showObj of shows) {
-  const show = document.createElement("div");
-  show.classList.add("show__item");
+    const showDate = createDiv("show__header", "Date");
+    show.append(showDate);
 
-  const showDate = createDiv("show__header", "Date");
-  show.append(showDate);
+    const dateInfo = createP(
+      "show__info--bold",
+      new Date(showObj.date).toDateString()
+    );
+    show.append(dateInfo);
 
+    const showVenue = createDiv("show__header", "Venue");
+    show.append(showVenue);
 
-  const dateInfo = createP("show__info--bold", new Date(showObj.date).toDateString());
-  show.append(dateInfo);
+    const venueInfo = createP("show__info", showObj.place);
+    show.append(venueInfo);
 
-  const showVenue = createDiv("show__header", "Venue");
-  show.append(showVenue);
+    const showLocation = createDiv("show__header", "Location");
+    show.append(showLocation);
 
-  const venueInfo = createP("show__info", showObj.place);
-  show.append(venueInfo);
+    const locationInfo = createP("show__info", showObj.location);
+    show.append(locationInfo);
 
-  const showLocation = createDiv("show__header", "Location");
-  show.append(showLocation);
+    const button = createButton("button", "buy tickets");
+    show.append(button);
 
-  const locationInfo = createP("show__info", showObj.location);
-  show.append(locationInfo);
-
-  const button = createButton("button", "buy tickets");
-  show.append(button);
-
-  list.append(show);
+    list.append(show);
+  }
 }
-}
-
-
 
 //functions to create buttons, divs, and paragraph tags
 function createButton(className, text = "") {

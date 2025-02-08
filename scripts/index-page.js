@@ -3,8 +3,10 @@ import { BandSiteApi } from "./band-site-api.js";
 const API_KEY = "36814136-3740-4923-8812-8c4b91f868ae";
 const bandSiteApi = new BandSiteApi(API_KEY);
 
+//get comments
 let comments = await bandSiteApi.getComments();
 
+//async function to like a comment, and update counter
 async function likedCommentEl(commentId, likeCount) {
   try {
     const likedComment = await bandSiteApi.likeComment(commentId);
@@ -16,6 +18,7 @@ async function likedCommentEl(commentId, likeCount) {
   }
 }
 
+//async function to delete comment, get comments again, and render again
 async function deletedCommentEl(commentId) {
   try {
     await bandSiteApi.deleteComment(commentId);
@@ -59,12 +62,18 @@ function createCommentElement(comment) {
   const likeButton = createButton("comment__like", "");
   commentAction.append(likeButton);
 
-  const imgLike = createImage ("comment__img","../assets/icons/SVG/icon-like.svg","thumbs-up")
+  const imgLike = createImage(
+    "comment__img",
+    "../assets/icons/SVG/icon-like.svg",
+    "thumbs-up"
+  );
   likeButton.append(imgLike);
 
+  //when there are no likes, counter will display 0
   const likeCount = createP("comment__number", ` (${comment.likes || 0})`);
   likeButton.append(likeCount);
 
+  //eventListener to add like count to comment when selected
   likeButton.addEventListener("click", () => {
     likedCommentEl(comment.id, likeCount);
   });
@@ -72,9 +81,14 @@ function createCommentElement(comment) {
   const deleteButton = createButton("comment__delete", "");
   commentAction.append(deleteButton);
 
-  const imgDelete = createImage("comment__img","assets/icons/SVG/icon-delete.svg", "trash-can")
+  const imgDelete = createImage(
+    "comment__img",
+    "assets/icons/SVG/icon-delete.svg",
+    "trash-can"
+  );
   deleteButton.append(imgDelete);
 
+  //eventListener to delete comment when button is selected
   deleteButton.addEventListener("click", () => {
     deletedCommentEl(comment.id);
   });
@@ -182,6 +196,7 @@ formEl.addEventListener("submit", async (e) => {
       comment: e.target.formComment.value,
     };
 
+    //post comment, get comment, and render all comments
     await bandSiteApi.postComment(newComment);
     comments = await bandSiteApi.getComments();
     renderAllComments(comments);
